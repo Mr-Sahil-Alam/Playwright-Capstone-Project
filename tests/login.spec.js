@@ -1,33 +1,15 @@
-class LoginPage {
+const { test, expect } = require('@playwright/test');
 
-    constructor(page) {
-        this.page = page;
+const LoginPage = require('../pages/login.page');
 
-        this.signupLoginBtn = page.getByRole('link', { name: 'Signup / Login' });
+test('Login Page Navigation Test', async ({ page }) => {
 
-        this.emailInput = page.locator('input[data-qa="login-email"]');
+    const loginPage = new LoginPage(page);
 
-        this.passwordInput = page.locator('input[data-qa="login-password"]');
+    await loginPage.goto();
 
-        this.loginBtn = page.getByRole('button', { name: 'Login' });
+    await loginPage.openLoginPage();
 
-        this.logoutBtn = page.getByRole('link', { name: 'Logout' });
-    }
+    await expect(page).toHaveURL(/login/);
 
-    async goto() {
-        await this.page.goto('https://automationexercise.com/');
-    }
-
-    async openLoginPage() {
-        await this.signupLoginBtn.click();
-    }
-
-    async login(email, password) {
-        await this.emailInput.fill(email);
-        await this.passwordInput.fill(password);
-        await this.loginBtn.click();
-    }
-
-}
-
-module.exports = LoginPage;
+});
