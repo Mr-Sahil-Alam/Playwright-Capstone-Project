@@ -27,11 +27,21 @@ loginData.forEach((data) => {
 
         } else {
 
-            await expect(
-                loginPage.errorMessage
-            ).toBeVisible();
+    if (data.email === "" || data.password === "") {
 
-        }
+        await expect(
+            loginPage.loginBtn
+        ).toBeVisible();
+
+    } else {
+
+        await expect(
+            loginPage.errorMessage
+        ).toBeVisible();
+
+    }
+
+}
 
     });
 

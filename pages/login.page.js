@@ -28,8 +28,8 @@ class LoginPage {
         );
 
         this.errorMessage = page.locator(
-            'p[style="color: red;"]'
-        );
+    'p[style="color: red;"]'
+);
     }
 
     async goto() {
@@ -41,6 +41,8 @@ class LoginPage {
 
     async openLoginPage() {
 
+       await this.signupLoginBtn.waitFor();
+
         await this.signupLoginBtn.click();
     }
 
@@ -50,7 +52,13 @@ class LoginPage {
 
         await this.passwordInput.fill(password);
 
-        await this.loginBtn.click();
+       await this.loginBtn.waitFor();
+
+await this.loginBtn.scrollIntoViewIfNeeded();
+
+await this.loginBtn.click({
+    force: true
+});
     }
 
 }
