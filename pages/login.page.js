@@ -21,6 +21,15 @@ class LoginPage {
             'button',
             { name: 'Login' }
         );
+
+        this.logoutBtn = page.getByRole(
+            'link',
+            { name: 'Logout' }
+        );
+
+        this.errorMessage = page.locator(
+            'p[style="color: red;"]'
+        );
     }
 
     async goto() {
