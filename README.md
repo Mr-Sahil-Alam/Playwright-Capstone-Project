@@ -16,6 +16,7 @@ The framework automates multiple business workflows of an ecommerce application 
 
 ---
 
+
 # Project Structure
 
 Playwright-Capstone-Project/
@@ -30,6 +31,7 @@ Playwright-Capstone-Project/
 ├── playwright.config.js
 ├── package.json
 └── README.md
+
 
 ---
 
