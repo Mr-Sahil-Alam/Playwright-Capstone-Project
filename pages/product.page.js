@@ -1,8 +1,42 @@
 class ProductPage {
+    async proceedToCheckout() {
+
+        await this.proceedToCheckoutBtn.waitFor({
+            state: 'visible'
+        });
+
+        await this.proceedToCheckoutBtn.click({
+            force: true
+        });
+    }
+
+    async verifyCheckoutPage() {
+
+        await this.checkoutText.waitFor({
+            state: 'visible'
+        });
+    }
 
     constructor(page) {
 
         this.page = page;
+
+        this.allProductsHeading = page.locator(
+            '.title.text-center'
+        );
+
+        this.proceedToCheckoutBtn = page.getByText(
+            'Proceed To Checkout'
+        );
+
+        this.checkoutText = page.locator(
+            '#cart_items'
+        );
+
+        this.registerLoginBtn = page.getByRole(
+            'link',
+            { name: 'Register / Login' }
+        );
 
         // Product Buttons
         this.productsBtn = page.getByRole(
