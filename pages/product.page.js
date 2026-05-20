@@ -21,6 +21,22 @@ class ProductPage {
 
         this.page = page;
 
+        this.productPrice = page.locator(
+            '.product-information span span'
+        );
+
+        this.productAvailability = page.locator(
+            '.product-information p'
+        ).nth(0);
+
+        this.productCondition = page.locator(
+            '.product-information p'
+        ).nth(1);
+
+        this.productBrand = page.locator(
+            '.product-information p'
+        ).nth(2);
+
         this.allProductsHeading = page.locator(
             '.title.text-center'
         );
