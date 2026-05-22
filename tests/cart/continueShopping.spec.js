@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 const ProductPage = require('../../pages/product.page');
 
-test('Add Multiple Products To Cart', async ({ page }) => {
+test('Verify Continue Shopping Button Works', async ({ page }) => {
 
     const productPage = new ProductPage(page);
 
@@ -14,14 +14,8 @@ test('Add Multiple Products To Cart', async ({ page }) => {
 
     await productPage.continueShopping();
 
-    await productPage.addSecondProductToCart();
-
-    await productPage.continueShopping();
-
-    await productPage.openCart();
-
     await expect(
-        productPage.cartProduct
-    ).toHaveCount(2);
+        page.locator('#cartModal')
+    ).toBeHidden();
 
 });

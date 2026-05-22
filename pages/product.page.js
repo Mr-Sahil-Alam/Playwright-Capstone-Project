@@ -96,10 +96,9 @@ class ProductPage {
             { name: 'Continue Shopping' }
         );
 
-        this.cartBtn = page.getByRole(
-            'link',
-            { name: 'Cart' }
-        );
+        this.cartBtn = page.locator(
+            'a[href="/view_cart"]'
+        ).first();
 
         this.cartProduct = page.locator(
             '.cart_description h4 a'
