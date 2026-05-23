@@ -176,6 +176,17 @@ Final Execution Result
 Allure Report Successfully Generated
 Project Documentation
 
+# Project Screenshots
+
+## HTML Report
+
+![HTML Report](screenshots/HTML-report.png)
+
+## Allure Report
+
+![Allure Report](screenshots/Allure-report.png)
+
+
 Project Planner PDF available inside:
 
 /docs
