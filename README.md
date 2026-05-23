@@ -186,7 +186,6 @@ Project Documentation
 
 ![Allure Report](./screenshots/Allure-report.png)
 
-
 Project Planner PDF available inside:
 
 /docs
