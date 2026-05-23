@@ -179,6 +179,7 @@ Project Documentation
 Project Planner PDF available inside:
 
 /docs
+
 Author
 
 Sahil Alam
