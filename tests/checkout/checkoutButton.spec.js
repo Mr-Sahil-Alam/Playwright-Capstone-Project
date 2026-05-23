@@ -8,8 +8,6 @@ test('Verify Checkout Button Visibility', async ({ page }) => {
 
     await productPage.goto();
 
-    await productPage.openProductsPage();
-
     await productPage.addFirstProductToCart();
 
     await productPage.continueShopping();

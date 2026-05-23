@@ -34,10 +34,9 @@ class ProductPage {
             '.product-information p'
         ).nth(1);
 
-        this.productBrand = page.locator(
-            '.product-information p'
-        ).nth(2);
-
+        this.productBrand = page.getByText(
+            'Brand:'
+        );
         this.allProductsHeading = page.getByText(
             'All Products'
         );
@@ -161,7 +160,9 @@ class ProductPage {
 
         await this.addToCartBtn.scrollIntoViewIfNeeded();
 
-        await this.addToCartBtn.click();
+        await this.addToCartBtn.click({
+            force: true
+        });
     }
 
     async addSecondProductToCart() {
