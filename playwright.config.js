@@ -28,7 +28,10 @@ export default defineConfig({
   workers: 1,
 
   /* Reporter to use */
-  reporter: 'html',
+ reporter: [
+  ['html'],
+  ['allure-playwright']
+],
 
   /* Shared settings for all the projects below */
   use: {
@@ -48,7 +51,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
+   /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
@@ -56,7 +59,7 @@ export default defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    },
+    },*/
 
     /* Test against mobile viewports */
     // {

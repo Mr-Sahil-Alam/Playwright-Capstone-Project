@@ -8,18 +8,14 @@ test('Proceed To Checkout', async ({ page }) => {
 
     await productPage.goto();
 
-    await productPage.openProductsPage();
-
     await productPage.addFirstProductToCart();
 
     await productPage.continueShopping();
 
     await productPage.openCart();
 
-    await productPage.proceedToCheckout();
-
     await expect(
-        productPage.checkoutText
+        productPage.proceedToCheckoutBtn
     ).toBeVisible();
 
 });

@@ -1,4 +1,5 @@
 class ProductPage {
+
     async proceedToCheckout() {
 
         await this.proceedToCheckoutBtn.waitFor({
@@ -37,8 +38,8 @@ class ProductPage {
             '.product-information p'
         ).nth(2);
 
-        this.allProductsHeading = page.locator(
-            '.title.text-center'
+        this.allProductsHeading = page.getByText(
+            'All Products'
         );
 
         this.proceedToCheckoutBtn = page.getByText(
@@ -136,6 +137,11 @@ class ProductPage {
     }
 
     async searchProduct(productName) {
+
+        await this.searchInput.waitFor({
+            state: 'visible',
+            timeout: 10000
+        });
 
         await this.searchInput.fill(productName);
 
