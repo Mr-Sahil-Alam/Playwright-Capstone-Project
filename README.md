@@ -37,7 +37,10 @@ Playwright-Capstone-Project/
 ├── package.json
 └── README.md
 
+```
+
 Implemented Modules
+
 
 Authentication Module
 Product Module
