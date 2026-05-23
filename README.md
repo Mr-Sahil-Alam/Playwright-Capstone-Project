@@ -180,11 +180,11 @@ Project Documentation
 
 ## HTML Report
 
-![HTML Report](./screenshots/HTML-report.png)
+![HTML Report](./screenshots/html-report.png)
 
 ## Allure Report
 
-![Allure Report](./screenshots/Allure-report.png)
+![Allure Report](./screenshots/allure-report.png)
 
 Project Planner PDF available inside:
 
@@ -195,4 +195,7 @@ Author
 Sahil Alam
 
 Wipro SDET Playwright Capstone Project
+
+
+
 
