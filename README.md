@@ -180,11 +180,11 @@ Project Documentation
 
 ## HTML Report
 
-![HTML Report](./screenshots/html-report.png)
+<img src="./screenshots/html-report.png" width="1000"/>
 
 ## Allure Report
 
-![Allure Report](./screenshots/allure-report.png)
+<img src="./screenshots/allure-report.png" width="1000"/>
 
 Project Planner PDF available inside:
 
