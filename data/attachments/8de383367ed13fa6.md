@@ -1,0 +1,1406 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: cart\cart.spec.js >> Add Product To Cart
+- Location: tests\cart\cart.spec.js:5:1
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('.cart_description h4 a')
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for locator('.cart_description h4 a')
+
+```
+
+```yaml
+- img
+- main:
+  - link "Meshy":
+    - /url: /?noRedirect=true
+    - img
+  - navigation "Main":
+    - list:
+      - listitem:
+        - button "Features":
+          - text: Features
+          - img
+      - listitem:
+        - link "API":
+          - /url: /api
+      - listitem:
+        - link "Pricing":
+          - /url: /pricing
+      - listitem:
+        - button "Solutions":
+          - text: Solutions
+          - img
+      - listitem:
+        - button "Community":
+          - text: Community
+          - img
+      - listitem:
+        - button "Resources":
+          - text: Resources
+          - img
+      - listitem:
+        - link "Creative Lab":
+          - /url: /creative-lab
+  - link "Contact Sales":
+    - /url: /contact
+  - button "Log In"
+  - button "Sign Up Free"
+  - button:
+    - img
+  - heading "The Easiest Way to Create 3D Models" [level=1]
+  - text: Meet the world's most popular and intuitive free AI 3D model generator. Transform text and images into stunning 3D models in seconds with our text & image to 3D model tool—no experience required!
+  - button "Start Creating"
+  - img "use case thumbnail - Film Production"
+  - text: Film Production
+  - img "use case thumbnail - Product Design"
+  - text: Product Design
+  - img "use case thumbnail - Education"
+  - text: Education
+  - img "use case thumbnail - Game Development"
+  - text: Game Development
+  - img "use case thumbnail - 3D Printing"
+  - text: 3D Printing
+  - img "use case thumbnail - VR/AR"
+  - text: VR/AR
+  - img "use case thumbnail - Interior Design"
+  - text: Interior Design
+  - heading "Film Production" [level=2]
+  - text: Cut costs and accelerate VFX and previsualization workflows with Meshy AI
+  - list:
+    - listitem:
+      - img
+      - text: Fast Previs & Look Dev
+    - listitem:
+      - img
+      - text: Streamlined VFX Workflow
+    - listitem:
+      - img
+      - text: Industry-Standard Quality
+  - link "Explore More":
+    - /url: /use-cases/film-production
+    - img
+    - text: Explore More
+  - img "use case image - Film Production"
+  - heading "Product Design" [level=2]
+  - text: With Meshy AI, deliver creativity, speed, and precision in your product design workflow
+  - list:
+    - listitem:
+      - img
+      - text: Rapid Concept to 3D Prototype
+    - listitem:
+      - img
+      - text: Design Smarter, Spend Less
+    - listitem:
+      - img
+      - text: Democratize Modeling Skills
+  - link "Explore More":
+    - /url: /use-cases/product-design
+    - img
+    - text: Explore More
+  - img "use case image - Product Design"
+  - heading "Education" [level=2]
+  - text: Affordable and Accessible 3D Models for educators and students
+  - list:
+    - listitem:
+      - img
+      - text: Unleash Creativity in 3D Printing Classes
+    - listitem:
+      - img
+      - text: Power Game & XR Education
+    - listitem:
+      - img
+      - text: Speed Up Educational App Development
+  - link "Explore More":
+    - /url: /use-cases/education
+    - img
+    - text: Explore More
+  - img "use case image - Education"
+  - heading "Game Development" [level=2]
+  - text: Meshy AI slashes 3D asset & animation cost in game development
+  - list:
+    - listitem:
+      - img
+      - text: Remesh & PBR Texture Support
+    - listitem:
+      - img
+      - text: Animate Your Game Characters
+    - listitem:
+      - img
+      - text: Export Seamlessly to Any Game Engine
+  - link "Explore More":
+    - /url: /use-cases/free-game-assets
+    - img
+    - text: Explore More
+  - button "Play video":
+    - img
+  - img
+  - heading "3D Printing" [level=2]
+  - text: Meshy AI turns your ideas into 3D-printable models in seconds
+  - list:
+    - listitem:
+      - img
+      - text: 3D Modeling Is No Longer a Barrier to Creation
+    - listitem:
+      - img
+      - text: Easily Resize and Export in Printer-Ready Formats
+    - listitem:
+      - img
+      - text: Clean, Detailed Models Built to Industry Standards
+  - link "Explore More":
+    - /url: /use-cases/3d-printer-files
+    - img
+    - text: Explore More
+  - button "Play video":
+    - img
+  - heading "VR/AR" [level=2]
+  - text: Low poly, optimized 3D assets for VR/AR made possible with Meshy AI
+  - list:
+    - listitem:
+      - img
+      - text: Rapid 3D Asset Creation
+    - listitem:
+      - img
+      - text: Optimized for Real-Time Performance
+    - listitem:
+      - img
+      - text: Built for VR/AR Workflows
+  - link "Explore More":
+    - /url: /use-cases/vr-ar
+    - img
+    - text: Explore More
+  - img "use case image - VR/AR"
+  - heading "Interior Design" [level=2]
+  - text: Meshy turns sketches, mood boards, or text into production-ready 3D interior assets
+  - list:
+    - listitem:
+      - img
+      - text: From Concept to Presentation, Fast
+    - listitem:
+      - img
+      - text: Photorealistic Results, No CAD Required
+    - listitem:
+      - img
+      - text: 3D Design Made Easy for Everyone
+  - link "Explore More":
+    - /url: /use-cases/interior-design
+    - img
+    - text: Explore More
+  - img "use case image - Interior Design"
+  - img "3D Content Creation Democratized"
+  - heading "3D Content Creation Democratized" [level=3]
+  - text: Empower anyone to create production-ready 3D assets from a simple text prompt or reference images in seconds, no need for learning specialized modeling skills
+  - img "10x Faster Than Traditional Methods"
+  - heading "10x Faster Than Traditional Methods" [level=3]
+  - text: Reduce hours or days of manual modeling and texturing to mere minutes, lightning fast generation speed saves you time in the development cycle and ensures your projects stay on schedule
+  - img "Scale Creation without Scaling Costs"
+  - heading "Scale Creation without Scaling Costs" [level=3]
+  - text: Create thousands of assets simultaneously at a fraction of traditional costs, cutting expenses for scaled 3D content creation by up to 100x
+  - img "Handshake"
+  - img "G2 Banner Users Love Us"
+  - text: Trusted by partners and customers across industries to build the future of 3D creation
+  - 'link "G2 G2 Rating: 4.8"':
+    - /url: https://www.g2.com/products/meshy/reviews
+    - img "G2"
+    - text: "G2 Rating: 4.8"
+  - 'link "TrustPilot Rating: 4.8"':
+    - /url: https://www.trustpilot.com/review/meshy.ai
+    - img
+    - text: "TrustPilot Rating: 4.8"
+  - link:
+    - /url: https://www.picoxr.com/global/
+    - img
+  - link:
+    - /url: https://www.stanford.edu/
+    - img
+  - link:
+    - /url: https://nianticlabs.com/
+    - img
+  - link:
+    - /url: https://www.mit.edu/
+    - img
+  - link:
+    - /url: https://www.harvard.edu/
+    - img
+  - link:
+    - /url: https://deepmind.google/
+    - img
+  - link:
+    - /url: https://www.berkeley.edu/
+    - img
+  - link:
+    - /url: https://www.microsoft.com/
+    - img
+  - heading "How It Works" [level=2]
+  - button "See It Live":
+    - img
+    - text: See It Live
+    - img
+  - list:
+    - listitem:
+      - img
+      - heading "Input" [level=3]
+      - text: Upload a clear image or type a short text prompt, no 3D skills required.
+      - img "Upload a clear image or type a short text prompt, no 3D skills required."
+    - listitem:
+      - img
+      - heading "Generate" [level=3]
+      - text: Watch it become a high-quality 3D model aligned to your input in moments.
+      - img "Watch it become a high-quality 3D model aligned to your input in moments."
+    - listitem:
+      - img
+      - heading "Download" [level=3]
+      - text: Preview your model in the browser, then download for your workflow.
+      - img "Preview your model in the browser, then download for your workflow."
+  - img
+  - text: Creation Speed
+  - heading "Instant 3D Model Creation in Seconds" [level=2]
+  - text: Meshy turbocharges every phase of 3D asset creation, slashing turnaround times from days to minutes. From prompt to model, our integrated AI-powered tools let you iterate, generate, and refine with unmatched efficiency.
+  - link "feature hero image to 3d model example 1 feature hero image to 3d model example 2 image-to-3d-model Image to 3D Model Turn your 2D images, sketch or illustrations effortlessly into stunning 3D models with our image to 3D model tool. Perfect for creators looking to bring their images to life.":
+    - /url: /features/image-to-3d
+    - img "feature hero image to 3d model example 1"
+    - img "feature hero image to 3d model example 2"
+    - img "image-to-3d-model"
+    - heading "Image to 3D Model" [level=3]
+    - text: Turn your 2D images, sketch or illustrations effortlessly into stunning 3D models with our image to 3D model tool. Perfect for creators looking to bring their images to life.
+  - img "feature 3d to video background left"
+  - button "Play video":
+    - img
+  - img "text-to-3d"
+  - img "text-to-3d"
+  - heading "3D to Video" [level=3]
+  - text: Bring 3D models and scenes to life with our AI video generator. Our 3D to Video feature ensures consistent results and gives you full control over every shot.
+  - link "feature hero text to 3d model example image-to-3d-model Text to 3D Model Create detailed 3D models from your ideas using our Text to 3D Model tool, which generates accurate 3D models from simple text descriptions.":
+    - /url: /features/text-to-3d
+    - img "feature hero text to 3d model example"
+    - img "image-to-3d-model"
+    - heading "Text to 3D Model" [level=3]
+    - text: Create detailed 3D models from your ideas using our Text to 3D Model tool, which generates accurate 3D models from simple text descriptions.
+  - link "feature hero ai texturing example image-to-3d-model AI Texturing Enhance your 3D models—generated or uploaded—using text prompts or reference images with our AI texture generator, crafting textures in any style you want.":
+    - /url: /features/ai-texture-generator
+    - img "feature hero ai texturing example"
+    - img "image-to-3d-model"
+    - heading "AI Texturing" [level=3]
+    - text: Enhance your 3D models—generated or uploaded—using text prompts or reference images with our AI texture generator, crafting textures in any style you want.
+  - img "feature hero smart remesh example"
+  - img "image-to-3d-model"
+  - heading "Smart Remesh" [level=3]
+  - text: Instantly adjust triangle or quad counts, switch topology types, and balance detail and performance on export with options from 1k to 300k.
+  - img "feature hero rigging and animation example 2"
+  - img "feature hero rigging and animation example 1"
+  - img "image-to-3d-model"
+  - heading "Rigging and Animation" [level=3]
+  - text: Easily rig your characters with automatic rigging, and prepare them for animation and industry-standard workflows.
+  - img
+  - heading "Multiple Concurrent Tasks" [level=4]
+  - text: Accelerate your workflow with bulk generation—Meshy can handle 50+ 3D model and texture tasks at once.
+  - img
+  - heading "Multilingual Support" [level=4]
+  - text: Besides English, Meshy supports prompts in multiple languages—type in Spanish, French, Chinese, Japanese, and more to create with ease.
+  - img
+  - heading "Animation Library" [level=4]
+  - text: Meshy’s animation library offers 500+ game-ready motions—from basic walks and jumps to complex shooting stances, fights, and dance moves.
+  - img "feature hero animation library model example"
+  - img
+  - text: Creative Flexibility
+  - heading "Unlock Limitless Creative Freedom" [level=2]
+  - text: Unlock limitless creativity with Meshy—craft props, characters, and environments in any style, from photorealistic to cartoon or sci-fi, all on your terms.
+  - img "AI prompt helper"
+  - img "image-to-3d"
+  - heading "AI Prompt Helper" [level=3]
+  - text: The built-in AI prompt helper transforms vague ideas into clear, detailed prompts—so you get the 3D model you envisioned, every time.
+  - img "feature hero pbr maps support 1"
+  - img "feature hero pbr maps support 2"
+  - img "image-to-3d"
+  - heading "PBR Maps Support" [level=3]
+  - text: Meshy supports PBR textures—Diffuse, Roughness, Metallic, and Normal maps—export-ready for Unreal, Unity, Blender, Maya, and WebGL.
+  - img
+  - heading "Versatile Texture Styles" [level=4]
+  - text: Create in any style, from realistic and cartoon to hand painted and fantasy, with Meshy's broad range of texture options at your command.
+  - img
+  - heading "Limitless Asset Types" [level=4]
+  - text: You can generate an endless variety of assets including characters, props, environments, and functional models like phone holders—your imagination sets the limit.
+  - img
+  - heading "Vibrant Community" [level=4]
+  - text: Meshy’s community of over 10 million creators shares, downloads, and remixes models. You can find collaboration, inspiration, and creative growth at Meshy community.
+  - img
+  - text: Fine-tuned Control
+  - heading "Total Creative Authority and Control" [level=2]
+  - text: Meshy puts you in control—guide generation with input settings, iterate on results, and fine-tune details until the asset aligns with your vision.
+  - img "feature hero text to multi view images example"
+  - heading "Text to Image" [level=3]
+  - text: Generate captivating images from text prompts using our Text to Single or Multiple Image tool, making it easy to visualize your concepts.
+  - img "feature hero multi view image to 3d example"
+  - img "feature hero multi view image to 3d example"
+  - heading "Multi-view Image to 3D" [level=3]
+  - text: Generate front, side, and back view images of your concept, then turn them into a high-fidelity 3D model that matches your vision.
+  - img "feature hero free retry example"
+  - heading "Free Retry" [level=3]
+  - text: With the same prompt, you can re-generate models for free, so you achieve the result you want.
+  - img "feature hero texture editing example"
+  - heading "AI Texture Editing" [level=3]
+  - text: Create unlimited textures on the same mesh and refine colors, patterns, or materials simply by adjusting your prompts.
+  - img
+  - text: Production Readiness
+  - heading "Ready for Professional Production, Instantly" [level=2]
+  - text: Meshy offers built-in post-processing to meet poly budgets, fix mesh issues, and export in industry-standard formats—no additional tools required.
+  - img "feature hero asset management example"
+  - heading "Asset Management" [level=3]
+  - text: Browse, preview, and manage your generated assets in one place. Label, search, and bulk download past assets anytime, so you spend less time digging and more time creating.
+  - img "feature hero private licensed example"
+  - heading "Private Licensed" [level=3]
+  - text: Meshy offers a private license that lets you commercialize your generated models while protecting them from unauthorized use or sharing.
+  - img "feature hero multiple 3d file formats example"
+  - heading "Multiple 3D File Formats Support" [level=3]
+  - text: Export model in FBX, GLB, OBJ, STL, 3MF, USDZ, BLEND formats for production use—no extra conversion needed.
+  - img "feature hero resize and pivot example"
+  - heading "Resize and Pivot Tool" [level=3]
+  - text: Set accurate real-world dimensions and pivot points for perfect in-scene alignment or 3D-print readiness.
+  - img
+  - text: Workflow Integration
+  - heading "Seamless Integration with Your 3D Pipeline" [level=2]
+  - text: Meshy’s plugins and API provide a frictionless bridge between asset creation and your preferred tools, ensuring efficiency from ideation to in-engine deployment.
+  - img "API Platform"
+  - heading "API Platform" [level=3]
+  - text: Tap directly into Meshy’s generation power via a robust, well-documented REST API—create tasks, manage balance, and weave 3D creation into any pipeline or language with just a few lines of code.
+  - img "3D Platform Plugins"
+  - heading "3D Platform Plugins" [level=3]
+  - text: Meshy integrates directly into your game engine and 3D pipeline with native plugins—import generated assets seamlessly into Blender, Unity, 3ds Max, Maya, Godot, Unreal Engine, and 3D printing softwares including Bambu Studio, OrcaSlicer, Creality Print, Elegoo Slicer, Ultimaker Cura, and Lychee Slicer.
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img
+  - img "Cura"
+  - img
+  - img
+  - text: Enterprise-Grade Controls
+  - heading "Enterprise-grade Controls and Administration" [level=2]
+  - text: Meshy empowers organizations with robust tools for secure access, data privacy, collaboration, and governance, making it the perfect solution for enterprise-level, multi-team, multi-project environments.
+  - img "feature hero multi team management"
+  - heading "Multi-Team Management" [level=3]
+  - text: For enterprise organizations managing multiple games and large teams, Meshy enables you to create and manage multiple team workspaces with centralized control and oversight.
+  - img "Shared Team Workspace"
+  - heading "Shared Team Workspace" [level=4]
+  - text: Shared credits and a unified asset library keep your team in sync and enable seamless collaboration throughout the workflow.
+  - img "ISO27001, SOC2 Type II, & GDPR Certifications"
+  - heading "ISO27001, SOC2 Type II, & GDPR Certifications" [level=4]
+  - text: Meshy delivers enterprise-grade security across every layer of our platform. Our platform is certified under SOC2 Type II, ISO27001, and GDPR
+  - img "Single Sign-On (SSO)"
+  - heading "Single Sign-On (SSO)" [level=4]
+  - text: Meshy Enterprise supports SSO via SAML, enabling secure, centralized login for large teams using identity providers like Okta, Google Workspace, or Microsoft Entra.
+  - img "Increased Data Privacy"
+  - heading "Increased Data Privacy" [level=4]
+  - text: Enterprise customer data is stored in a separate, secure database to ensure privacy and meet organizational compliance needs.
+  - img "Dedicated Account Support"
+  - heading "Dedicated Account Support" [level=4]
+  - text: Dedicated account executives and solutions engineers are here to support your enterprise setup and assist with any general inquiries promptly.
+  - img "Forever Asset Retention"
+  - heading "Forever Asset Retention" [level=4]
+  - text: Once generated, your models are always available for download—anytime you need them.
+  - img "Centralized Billing"
+  - heading "Centralized Billing" [level=4]
+  - text: All team members share a single billing account, making it easier for IT and finance teams to manage payments and invoices.
+  - heading "Showcase" [level=2]
+  - link "Explore More":
+    - /url: /discover
+    - text: Explore More
+    - img
+  - img
+  - heading "Collections" [level=3]
+  - button:
+    - img
+  - button:
+    - img
+  - link "Collections collection cover collection cover collection cover Emberstone Obelisk Riven Runestone Azure Crystal Throne Crystal Throne Glowing Crystal Chest Runestone Obelisk Prismatic Shard Tabletop Terrain":
+    - /url: /collections/Prismatic-Shard-Tabletop-Terrain-019e15ab-4a09-7bd8-9238-5745d1021264
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - button
+    - button
+    - button
+    - img "Emberstone Obelisk"
+    - img "Riven Runestone"
+    - img "Azure Crystal Throne"
+    - img "Crystal Throne"
+    - img "Glowing Crystal Chest"
+    - img "Runestone Obelisk"
+    - paragraph: Prismatic Shard Tabletop Terrain
+  - img "Zonique2k"
+  - img
+  - paragraph: Zonique2k
+  - link "Collections collection cover Hooded Shadowblade Empress of the Mycelial Bloom Dreadspine Warlord Chromatic Cyborg Empress Icebound Wraith Icebound Luminary Glory to Women (jurafjvs)":
+    - /url: /collections/Glory-to-Women-jurafjvs-01984d9f-5682-738b-a66b-942a2ca788f4
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "Hooded Shadowblade"
+    - img "Empress of the Mycelial Bloom"
+    - img "Dreadspine Warlord"
+    - img "Chromatic Cyborg Empress"
+    - img "Icebound Wraith"
+    - img "Icebound Luminary"
+    - paragraph: Glory to Women (jurafjvs)
+  - img "jurafjvs"
+  - img
+  - paragraph: jurafjvs
+  - link "Collections collection cover Ironbound Warlord Azure Aegis Steel Predator Ember Crown of the Arcane Circle Icebound Luminary Luminous Sentinel Cyborg and Robotic (jurafjvs)":
+    - /url: /collections/Cyborg-and-Robotic-jurafjvs-01984d42-4813-736e-9bc4-e329f52bc9a8
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "Ironbound Warlord"
+    - img "Azure Aegis"
+    - img "Steel Predator"
+    - img "Ember Crown of the Arcane Circle"
+    - img "Icebound Luminary"
+    - img "Luminous Sentinel"
+    - paragraph: Cyborg and Robotic (jurafjvs)
+  - img "jurafjvs"
+  - img
+  - paragraph: jurafjvs
+  - link "Collections collection cover Wasteland Rover Echoes of Rust Rusted Canteen Rusted Thunder Blaster Relics of the Wasteland":
+    - /url: /collections/Relics-of-the-Wasteland-019a7a4f-d2df-7ba6-9250-3f33a7250157
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "Wasteland Rover"
+    - img "Echoes of Rust"
+    - img "Rusted Canteen"
+    - img "Rusted Thunder Blaster"
+    - paragraph: Relics of the Wasteland
+  - img "bitstyler"
+  - img
+  - paragraph: bitstyler
+  - link "Collections collection cover Wasteland Scrap Warrior Wasteland Rover Frostborne Valkyrie Crimson Crowned King Rustbound Sentinel Characters":
+    - /url: /collections/Characters-019961fb-7c13-74ec-a787-2b42cf59cc01
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "Wasteland Scrap Warrior"
+    - img "Wasteland Rover"
+    - img "Frostborne Valkyrie"
+    - img "Crimson Crowned King"
+    - img "Rustbound Sentinel"
+    - paragraph: Characters
+  - img "bitstyler"
+  - img
+  - paragraph: bitstyler
+  - link "Collections collection cover collection cover collection cover collection cover collection cover collection cover Prismatic Phoenix Emberwand Sentinel Moonlit Witch Cat Prismatic Phoenix Tales of the Deathly Hallows Celestial Emberwing Prefects' Cabinet Collection 🪄":
+    - /url: /collections/Prefects-Cabinet-Collection-0199deab-67ca-7c92-a832-4ef48ded430e
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - button
+    - button
+    - button
+    - button
+    - button
+    - button
+    - img "Prismatic Phoenix"
+    - img "Emberwand Sentinel"
+    - img "Moonlit Witch Cat"
+    - img "Prismatic Phoenix"
+    - img "Tales of the Deathly Hallows"
+    - img "Celestial Emberwing"
+    - paragraph: Prefects' Cabinet Collection 🪄
+  - img "cyber_fox"
+  - img
+  - paragraph: cyber_fox
+  - link "Collections collection cover CAT-1988 Cyberpunk Neon Blaster Tactical Bullpup Rifle X Futuristic Ride BMWH-Peacemaker TT-Police High Tech World":
+    - /url: /collections/High-Tech-World-019973bb-6d47-7c0f-b3cf-e839e4d4c10c
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "CAT-1988"
+    - img "Cyberpunk Neon Blaster"
+    - img "Tactical Bullpup Rifle X"
+    - img "Futuristic Ride"
+    - img "BMWH-Peacemaker"
+    - img "TT-Police"
+    - paragraph: High Tech World
+  - img "bigbro2236"
+  - img
+  - paragraph: bigbro2236
+  - link "Collections collection cover collection cover collection cover collection cover collection cover Vinebound Goddess Vinebound Arcane Vessel Vinebound Elixir Garden of Gems Verdant Gem Lantern Jeweled Tree Fan The Enchanted Vault":
+    - /url: /collections/The-Enchanted-Vault-01987cec-41e1-7db6-8440-6f347c21babd
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - button
+    - button
+    - button
+    - button
+    - button
+    - img "Vinebound Goddess"
+    - img "Vinebound Arcane Vessel"
+    - img "Vinebound Elixir"
+    - img "Garden of Gems"
+    - img "Verdant Gem Lantern"
+    - img "Jeweled Tree Fan"
+    - paragraph: The Enchanted Vault
+  - img "cyber_fox"
+  - img
+  - paragraph: cyber_fox
+  - link "Collections collection cover Spoolside Daydream The Blacksmith's Forge Steampunk Gunslinger Biohazard Ranger Biohazard Rider Wasteland Sentinel Tabletop 3D Figures":
+    - /url: /collections/Tabletop-3D-Figures-019c3312-0ca8-741d-86d4-76f12393000d
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "Spoolside Daydream"
+    - img "The Blacksmith's Forge"
+    - img "Steampunk Gunslinger"
+    - img "Biohazard Ranger"
+    - img "Biohazard Rider"
+    - img "Wasteland Sentinel"
+    - paragraph: Tabletop 3D Figures
+  - img "oogimsch2016oo"
+  - img
+  - paragraph: oogimsch2016oo
+  - link "Collections collection cover collection cover collection cover collection cover collection cover collection cover collection cover collection cover M11 PDW with Holosun sight and SureFire X200U light Aurora Sentinel Ultra realistic modern military gas mask, based on real special forces equipment, black matte rubber body, clear polycarbonate visor, dual filter system, tactical nylon straps, detailed valves, serial numbers, realistic wear and scratches, PBR materials, hard-surface modeling, AAA game asset quality, highly detailed, practical military design, white studio background. Prismatic Phoenix Gnome on a White Pony Orbital Lounge ysprottel's favorites":
+    - /url: /collections/ysprottels-favorites-5aacec09-7d18-4b35-b827-709c1317ee6c
+    - img
+    - img
+    - text: Collections
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - img "collection cover"
+    - button
+    - button
+    - button
+    - button
+    - button
+    - button
+    - button
+    - button
+    - img "M11 PDW with Holosun sight and SureFire X200U light"
+    - img "Aurora Sentinel"
+    - img "Ultra realistic modern military gas mask, based on real special forces equipment, black matte rubber body, clear polycarbonate visor, dual filter system, tactical nylon straps, detailed valves, serial numbers, realistic wear and scratches, PBR materials, hard-surface modeling, AAA game asset quality, highly detailed, practical military design, white studio background."
+    - img "Prismatic Phoenix"
+    - img "Gnome on a White Pony"
+    - img "Orbital Lounge"
+    - paragraph: ysprottel's favorites
+  - img "ysprottel"
+  - paragraph: ysprottel
+  - img
+  - heading "Models" [level=3]
+  - button:
+    - img
+  - button:
+    - img
+  - button "3D model for Bamboo Torii Gate 3D model for Bamboo Torii Gate Image to 3D":
+    - link "3D model for Bamboo Torii Gate 3D model for Bamboo Torii Gate":
+      - /url: /3d-models/Bamboo-Torii-Gate-v2-01991455-04a9-75e6-952e-e8632b79a6fd
+      - img "3D model for Bamboo Torii Gate"
+      - img "3D model for Bamboo Torii Gate"
+    - img
+    - text: Image to 3D
+  - img "3D model for Bamboo Torii Gate"
+  - link "sponcony sponcony":
+    - /url: /@e0a06e1a-222a-4ce7-b842-1ec07c434ff3
+    - img "sponcony"
+    - text: sponcony
+  - button "3D model for Caramelo 3D model for Caramelo Image to 3D":
+    - link "3D model for Caramelo 3D model for Caramelo":
+      - /url: /3d-models/Caramelo-v2-019ada68-abf3-75c2-a4a9-22423e730445
+      - img "3D model for Caramelo"
+      - img "3D model for Caramelo"
+    - img
+    - text: Image to 3D
+  - img "3D model for Caramelo"
+  - link "Arthur Arthur":
+    - /url: /@7ec0b214-03cc-44e9-a2fa-a36c928d2b4b
+    - img "Arthur"
+    - text: Arthur
+  - button "3D model for Golden Shield of Valor 3D model for Golden Shield of Valor Image to 3D":
+    - link "3D model for Golden Shield of Valor 3D model for Golden Shield of Valor":
+      - /url: /3d-models/Golden-Shield-of-Valor-v2-019a454b-13bc-7349-b3cd-00f45bd2911d
+      - img "3D model for Golden Shield of Valor"
+      - img "3D model for Golden Shield of Valor"
+    - img
+    - text: Image to 3D
+  - img "3D model for Golden Shield of Valor"
+  - link "Johnny Johnny":
+    - /url: /@2841144d-327c-4274-9185-5973fabf8e8b
+    - img "Johnny"
+    - img
+    - text: Johnny
+  - 'button "3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025# 3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025# Image to 3D"':
+    - 'link "3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025# 3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025#"':
+      - /url: /3d-models/Halloween2025-stylized-spooky-hallowenn-manor-sitting-on-a-big-jack-o-lantern-handpainted-look-and-feel-masterfully-crafted-extreme-details-on-neutral-grey-background-natural-but-slightly-vibrant-colors-well-lit-distressed-textures-extreme-details-design-highest-resolution-dark-and-gloomy-tentacles-Halloween2025-Halloween2025-v2-019a3a30-2fd8-7ae2-ab59-8a06a3f44946
+      - 'img "3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025#"'
+      - 'img "3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025#"'
+    - img
+    - text: Image to 3D
+  - 'img "3D model for #Halloween2025#, stylized spooky hallowenn manor sitting on a big jack o lantern , handpainted look and feel, masterfully crafted, extreme details, on neutral grey background, natural but slightly vibrant colors, well lit , distressed textures , extreme details, design , highest resolution, dark and gloomy, tentacles, #Halloween2025#, #Halloween2025#"'
+  - link "Dark_N0Mad Dark_N0Mad":
+    - /url: /@16cf459b-5e40-4314-b7c0-c8bece461167
+    - img "Dark_N0Mad"
+    - img
+    - text: Dark_N0Mad
+  - 'button "3D model for Halloween Night Gathering, #Halloween2025# 3D model for Halloween Night Gathering, #Halloween2025# Image to 3D"':
+    - 'link "3D model for Halloween Night Gathering, #Halloween2025# 3D model for Halloween Night Gathering, #Halloween2025#"':
+      - /url: /3d-models/Halloween-Night-Gathering-Halloween2025-v2-019a37e8-bcd5-7289-a9db-da0d271e5a2a
+      - 'img "3D model for Halloween Night Gathering, #Halloween2025#"'
+      - 'img "3D model for Halloween Night Gathering, #Halloween2025#"'
+    - img
+    - text: Image to 3D
+  - 'img "3D model for Halloween Night Gathering, #Halloween2025#"'
+  - link "Meshy_Official Meshy_Official":
+    - /url: /@c6fc23fb-20f6-4561-929e-bae6fdc5f84c
+    - img "Meshy_Official"
+    - img
+    - text: Meshy_Official
+  - button "3D model for Golden Elegance 3D model for Golden Elegance Image to 3D":
+    - link "3D model for Golden Elegance 3D model for Golden Elegance":
+      - /url: /3d-models/Golden-Elegance-v2-019a37c5-d727-7ddd-add1-eb6d1e2b640e
+      - img "3D model for Golden Elegance"
+      - img "3D model for Golden Elegance"
+    - img
+    - text: Image to 3D
+  - img "3D model for Golden Elegance"
+  - link "Meshy_Official Meshy_Official":
+    - /url: /@c6fc23fb-20f6-4561-929e-bae6fdc5f84c
+    - img "Meshy_Official"
+    - img
+    - text: Meshy_Official
+  - 'button "3D model for Electro Tentacle Fiend, #3 #Halloween2025# 3D model for Electro Tentacle Fiend, #3 #Halloween2025# Image to 3D"':
+    - 'link "3D model for Electro Tentacle Fiend, #3 #Halloween2025# 3D model for Electro Tentacle Fiend, #3 #Halloween2025#"':
+      - /url: /3d-models/Electro-Tentacle-Fiend-3-Halloween2025-v2-019a3700-5fd8-77e3-b89e-4ad5551e03a4
+      - 'img "3D model for Electro Tentacle Fiend, #3 #Halloween2025#"'
+      - 'img "3D model for Electro Tentacle Fiend, #3 #Halloween2025#"'
+    - img
+    - text: Image to 3D
+  - 'img "3D model for Electro Tentacle Fiend, #3 #Halloween2025#"'
+  - link "SIGHTSPIKE SIGHTSPIKE":
+    - /url: /@12d65e06-2389-4ed9-8daa-b782397a9dfd
+    - img "SIGHTSPIKE"
+    - img
+    - text: SIGHTSPIKE
+  - 'button "3D model for Winged Elegance, #Halloween2025# 3D model for Winged Elegance, #Halloween2025# Image to 3D"':
+    - 'link "3D model for Winged Elegance, #Halloween2025# 3D model for Winged Elegance, #Halloween2025#"':
+      - /url: /3d-models/Winged-Elegance-Halloween2025-v2-019a368e-e32f-7b49-ae8d-4c6d21ba1416
+      - 'img "3D model for Winged Elegance, #Halloween2025#"'
+      - 'img "3D model for Winged Elegance, #Halloween2025#"'
+    - img
+    - text: Image to 3D
+  - 'img "3D model for Winged Elegance, #Halloween2025#"'
+  - link "Legy Legy":
+    - /url: /@2afeba46-97f0-45aa-a6b1-35cabf5bbc44
+    - img "Legy"
+    - text: Legy
+  - button "3D model for Solitary Sentinel 3D model for Solitary Sentinel Image to 3D":
+    - link "3D model for Solitary Sentinel 3D model for Solitary Sentinel":
+      - /url: /3d-models/Solitary-Sentinel-v2-01997c20-fb35-7d83-a6df-c898ddf38434
+      - img "3D model for Solitary Sentinel"
+      - img "3D model for Solitary Sentinel"
+    - img
+    - text: Image to 3D
+  - img "3D model for Solitary Sentinel"
+  - link "nhac1904 nhac1904":
+    - /url: /@d0aefaa1-8da9-4432-9c08-1b4b89e7ee19
+    - img "nhac1904"
+    - text: nhac1904
+  - button "3D model for Frostshard Axe 3D model for Frostshard Axe Image to 3D":
+    - link "3D model for Frostshard Axe 3D model for Frostshard Axe":
+      - /url: /3d-models/Frostshard-Axe-v2-01987fbd-1d04-7962-b5eb-557721e7f910
+      - img "3D model for Frostshard Axe"
+      - img "3D model for Frostshard Axe"
+    - img
+    - text: Image to 3D
+  - img "3D model for Frostshard Axe"
+  - link "marin marin":
+    - /url: /@0e9976ca-4cc1-43e1-a437-f5d8e009f217
+    - img "marin"
+    - img
+    - text: marin
+  - button:
+    - link:
+      - /url: /3d-models/Scifi-undead-cyborg-Ogre-robot-revenant-hulking-massive-body-with-massive-chest-and-scary-plates-all-over-the-body-long-massive-heavy-arms-multilayered-anatomical-sci-fi-bio-suit-massive-hands-with-massive-power-claws-glowing-tech-symbols-all-over-the-suit-a-huge-enginelike-backpack-or-power-generator-connected-to-the-armor-with-thick-cables-sits-on-his-back-evil-and-sinister-detailed-face-extremely-detailed-high-resolution-texture-epic-stance-inspired-by-HR-Giger-dark-olive-tones-muted-natural-colors-c0omplemented-with-orange-distressed-textures-well-balanced-high-frequency-details-v2-01978857-2644-73a4-8caf-b2d91e7d6cbb
+      - img "3D model for Scifi undead cyborg Ogre, robot revenant, hulking massive body with massive chest and scary plates all over the body, long massive heavy arms, multilayered, anatomical sci fi bio suit, , massive hands with massive power claws, glowing tech symbols all over the suit, a huge enginelike backpack or power generator connected to the armor with thick cables sits on his back, evil and sinister, detailed face, extremely detailed, high resolution texture, epic stance, inspired by HR Giger, dark olive tones muted natural colors, c0omplemented with orange, distressed textures. well balanced high frequency details,"
+      - img "3D model for Scifi undead cyborg Ogre, robot revenant, hulking massive body with massive chest and scary plates all over the body, long massive heavy arms, multilayered, anatomical sci fi bio suit, , massive hands with massive power claws, glowing tech symbols all over the suit, a huge enginelike backpack or power generator connected to the armor with thick cables sits on his back, evil and sinister, detailed face, extremely detailed, high resolution texture, epic stance, inspired by HR Giger, dark olive tones muted natural colors, c0omplemented with orange, distressed textures. well balanced high frequency details,"
+    - img
+    - text: Text to 3D
+  - text: Scifi undead cyborg Ogre, robot revenant, hulking massive body with massive chest and scary plates all over the body, long massive heavy arms, multilayered, anatomical sci fi bio suit, , massive hands with massive power claws, glowing tech symbols all over the suit, a huge enginelike backpack or power generator connected to the armor with thick cables sits on his back, evil and sinister, detailed face, extremely detailed, high resolution texture, epic stance, inspired by HR Giger, dark olive tones muted natural colors, c0omplemented with orange, distressed textures. well balanced high frequency details,
+  - link "Dark_N0Mad Dark_N0Mad":
+    - /url: /@16cf459b-5e40-4314-b7c0-c8bece461167
+    - img "Dark_N0Mad"
+    - img
+    - text: Dark_N0Mad
+  - button "3D model for The City Within Roman 3D model for The City Within Roman Image to 3D":
+    - link "3D model for The City Within Roman 3D model for The City Within Roman":
+      - /url: /3d-models/The-City-Within-Roman-v2-019d616e-df4d-7ebe-8a94-6079bfed0113
+      - img "3D model for The City Within Roman"
+      - img "3D model for The City Within Roman"
+    - img
+    - text: Image to 3D
+  - img "3D model for The City Within Roman"
+  - link "emrework emrework":
+    - /url: /@3a09f632-945b-429a-9cd1-99b902d50455
+    - img "emrework"
+    - img
+    - text: emrework
+  - button "3D model for Inferno Mask 3D model for Inferno Mask Image to 3D":
+    - link "3D model for Inferno Mask 3D model for Inferno Mask":
+      - /url: /3d-models/Inferno-Mask-v2-019c49ff-8663-7638-a1d4-a58c1d3100ee
+      - img "3D model for Inferno Mask"
+      - img "3D model for Inferno Mask"
+    - img
+    - text: Image to 3D
+  - img "3D model for Inferno Mask"
+  - link "dna685 dna685":
+    - /url: /@5aa80c34-d329-41d4-97f8-529de34e1753
+    - img "dna685"
+    - img
+    - text: dna685
+  - button "3D model for Ceramic Queen Mug 3D model for Ceramic Queen Mug Image to 3D":
+    - link "3D model for Ceramic Queen Mug 3D model for Ceramic Queen Mug":
+      - /url: /3d-models/Ceramic-Queen-Mug-v2-019aeb09-ec9c-7481-a834-313553a303e2
+      - img "3D model for Ceramic Queen Mug"
+      - img "3D model for Ceramic Queen Mug"
+    - img
+    - text: Image to 3D
+  - img "3D model for Ceramic Queen Mug"
+  - link "kecoktay kecoktay":
+    - /url: /@google-oauth2|113138049095720250559
+    - img "kecoktay"
+    - img
+    - text: kecoktay
+  - button "3D model for Infernal Warlord 3D model for Infernal Warlord Image to 3D":
+    - link "3D model for Infernal Warlord 3D model for Infernal Warlord":
+      - /url: /3d-models/Infernal-Warlord-v2-019aea7f-e9f8-79c3-8def-3e25085a1510
+      - img "3D model for Infernal Warlord"
+      - img "3D model for Infernal Warlord"
+    - img
+    - text: Image to 3D
+  - img "3D model for Infernal Warlord"
+  - link "Benreally Benreally":
+    - /url: /@0733c71e-a3eb-4991-86ef-955f53290b43
+    - img "Benreally"
+    - text: Benreally
+  - 'button "3D model for Graffiti Cyborg Hand, #Thanksgiving# 3D model for Graffiti Cyborg Hand, #Thanksgiving# Image to 3D"':
+    - 'link "3D model for Graffiti Cyborg Hand, #Thanksgiving# 3D model for Graffiti Cyborg Hand, #Thanksgiving#"':
+      - /url: /3d-models/Graffiti-Cyborg-Hand-Thanksgiving-v2-019a9954-ab7a-7a72-b626-d21479a5e694
+      - 'img "3D model for Graffiti Cyborg Hand, #Thanksgiving#"'
+      - 'img "3D model for Graffiti Cyborg Hand, #Thanksgiving#"'
+    - img
+    - text: Image to 3D
+  - 'img "3D model for Graffiti Cyborg Hand, #Thanksgiving#"'
+  - link "kecoktay kecoktay":
+    - /url: /@google-oauth2|113138049095720250559
+    - img "kecoktay"
+    - img
+    - text: kecoktay
+  - button "3D model for Cyber Vandalism 3D model for Cyber Vandalism Image to 3D":
+    - link "3D model for Cyber Vandalism 3D model for Cyber Vandalism":
+      - /url: /3d-models/Cyber-Vandalism-v2-019a82c8-3383-76e2-8938-51329d941c6b
+      - img "3D model for Cyber Vandalism"
+      - img "3D model for Cyber Vandalism"
+    - img
+    - text: Image to 3D
+  - img "3D model for Cyber Vandalism"
+  - link "kecoktay kecoktay":
+    - /url: /@google-oauth2|113138049095720250559
+    - img "kecoktay"
+    - img
+    - text: kecoktay
+  - button "3D model for Psychedelic Fungus Creature 3D model for Psychedelic Fungus Creature Image to 3D":
+    - link "3D model for Psychedelic Fungus Creature 3D model for Psychedelic Fungus Creature":
+      - /url: /3d-models/Psychedelic-Fungus-Creature-v2-019a6b23-ce8c-794e-a72e-f93b114b3212
+      - img "3D model for Psychedelic Fungus Creature"
+      - img "3D model for Psychedelic Fungus Creature"
+    - img
+    - text: Image to 3D
+  - img "3D model for Psychedelic Fungus Creature"
+  - link "KATAKANA-KUN KATAKANA-KUN":
+    - /url: /@b701a353-ab71-47b8-be69-9d07dea24a50
+    - img "KATAKANA-KUN"
+    - img
+    - text: KATAKANA-KUN
+  - button "3D model for Infernal Aegis 3D model for Infernal Aegis Image to 3D":
+    - link "3D model for Infernal Aegis 3D model for Infernal Aegis":
+      - /url: /3d-models/Infernal-Aegis-v2-019a5c6c-84c0-74d3-b3cc-b2bba094c3fb
+      - img "3D model for Infernal Aegis"
+      - img "3D model for Infernal Aegis"
+    - img
+    - text: Image to 3D
+  - img "3D model for Infernal Aegis"
+  - link "kecoktay kecoktay":
+    - /url: /@google-oauth2|113138049095720250559
+    - img "kecoktay"
+    - img
+    - text: kecoktay
+  - button "3D model for Emerald Enclave Blade 3D model for Emerald Enclave Blade Image to 3D":
+    - link "3D model for Emerald Enclave Blade 3D model for Emerald Enclave Blade":
+      - /url: /3d-models/Emerald-Enclave-Blade-v2-019a47c2-2322-752f-8294-9da08fb17fd7
+      - img "3D model for Emerald Enclave Blade"
+      - img "3D model for Emerald Enclave Blade"
+    - img
+    - text: Image to 3D
+  - img "3D model for Emerald Enclave Blade"
+  - link "Johnny Johnny":
+    - /url: /@2841144d-327c-4274-9185-5973fabf8e8b
+    - img "Johnny"
+    - img
+    - text: Johnny
+  - heading "User Stories" [level=2]
+  - button:
+    - img
+  - button:
+    - img
+  - 'link "From One Archival Photo to a 3D-Printed Bust: How Meshy Brings Historical Figures to Life From One Archival Photo to a 3D-Printed Bust: How Meshy Brings Historical Figures to Life"':
+    - /url: /blog/photo-to-3d-printed-bust
+    - 'img "From One Archival Photo to a 3D-Printed Bust: How Meshy Brings Historical Figures to Life"'
+    - text: "From One Archival Photo to a 3D-Printed Bust: How Meshy Brings Historical Figures to Life"
+  - 'link "Empowering K-8 Creators: How Hasten Hebrew Academy Revolutionizes STEAM Education with Meshy Empowering K-8 Creators: How Hasten Hebrew Academy Revolutionizes STEAM Education with Meshy"':
+    - /url: /blog/ai-transforming-steam-k8-education
+    - 'img "Empowering K-8 Creators: How Hasten Hebrew Academy Revolutionizes STEAM Education with Meshy"'
+    - text: "Empowering K-8 Creators: How Hasten Hebrew Academy Revolutionizes STEAM Education with Meshy"
+  - 'link "Bridging the Distance: How Alice Guzzi and APECS Italy Make Polar Science Tangible with Meshy Bridging the Distance: How Alice Guzzi and APECS Italy Make Polar Science Tangible with Meshy"':
+    - /url: /blog/image-to-3d-apecs-polar-science
+    - 'img "Bridging the Distance: How Alice Guzzi and APECS Italy Make Polar Science Tangible with Meshy"'
+    - text: "Bridging the Distance: How Alice Guzzi and APECS Italy Make Polar Science Tangible with Meshy"
+  - 'link "Empowering Future Creators: How Meshy Accelerates 2D-to-3D Workflow in High School Digital Arts Empowering Future Creators: How Meshy Accelerates 2D-to-3D Workflow in High School Digital Arts"':
+    - /url: /blog/ai-2d-to-3d-character-design-game-art
+    - 'img "Empowering Future Creators: How Meshy Accelerates 2D-to-3D Workflow in High School Digital Arts"'
+    - text: "Empowering Future Creators: How Meshy Accelerates 2D-to-3D Workflow in High School Digital Arts"
+  - link "How West Edge 3D Expands Full-Color Printing with Meshy How West Edge 3D Expands Full-Color Printing with Meshy":
+    - /url: /blog/text-to-3d-polyjet-printing-pipeline-diverse-figurines
+    - img "How West Edge 3D Expands Full-Color Printing with Meshy"
+    - text: How West Edge 3D Expands Full-Color Printing with Meshy
+  - 'link "From Children''s Drawings to Real Superheroes: How Liga Superbohaterów Uses Meshy to Bring Hope to Kids Fighting Cancer From Children''s Drawings to Real Superheroes: How Liga Superbohaterów Uses Meshy to Bring Hope to Kids Fighting Cancer"':
+    - /url: /blog/transforming-children-drawings-into-3d-printed-superheroes
+    - 'img "From Children''s Drawings to Real Superheroes: How Liga Superbohaterów Uses Meshy to Bring Hope to Kids Fighting Cancer"'
+    - text: "From Children's Drawings to Real Superheroes: How Liga Superbohaterów Uses Meshy to Bring Hope to Kids Fighting Cancer"
+  - 'link "The New Palette: How HUFA Integrates Meshy for Cross-Disciplinary 3D Art Education The New Palette: How HUFA Integrates Meshy for Cross-Disciplinary 3D Art Education"':
+    - /url: /blog/ai-3d-asset-creation-art-education
+    - 'img "The New Palette: How HUFA Integrates Meshy for Cross-Disciplinary 3D Art Education"'
+    - text: "The New Palette: How HUFA Integrates Meshy for Cross-Disciplinary 3D Art Education"
+  - 'link "Modernizing the 3D Pipeline: How Shawn Nelson Integrates Meshy into Professional Art Education Modernizing the 3D Pipeline: How Shawn Nelson Integrates Meshy into Professional Art Education"':
+    - /url: /blog/modernizing-3d-art-education-pipeline
+    - 'img "Modernizing the 3D Pipeline: How Shawn Nelson Integrates Meshy into Professional Art Education"'
+    - text: "Modernizing the 3D Pipeline: How Shawn Nelson Integrates Meshy into Professional Art Education"
+  - link "How Eric York Empowers Students in Robotics and Game Design with Meshy How Eric York Empowers Students in Robotics and Game Design with Meshy":
+    - /url: /blog/ai-3d-modeling-robotics-game-design-stem-education
+    - img "How Eric York Empowers Students in Robotics and Game Design with Meshy"
+    - text: How Eric York Empowers Students in Robotics and Game Design with Meshy
+  - 'link "Shifting the Focus: How a University Educator Uses Meshy to Pioneer 3D Art Education Shifting the Focus: How a University Educator Uses Meshy to Pioneer 3D Art Education"':
+    - /url: /blog/concept-driven-3d-art-education
+    - 'img "Shifting the Focus: How a University Educator Uses Meshy to Pioneer 3D Art Education"'
+    - text: "Shifting the Focus: How a University Educator Uses Meshy to Pioneer 3D Art Education"
+  - link "How Meshy AI Bridges Imagination and Production for the Next Generation of Game Designers How Meshy AI Bridges Imagination and Production for the Next Generation of Game Designers":
+    - /url: /blog/student-sketches-to-unity-3d-assets
+    - img "How Meshy AI Bridges Imagination and Production for the Next Generation of Game Designers"
+    - text: How Meshy AI Bridges Imagination and Production for the Next Generation of Game Designers
+  - 'link "From Procreate to Cinema 4D: How Mikhail Arce-Ignacio Bridges the 2D-to-3D Gap with Meshy From Procreate to Cinema 4D: How Mikhail Arce-Ignacio Bridges the 2D-to-3D Gap with Meshy"':
+    - /url: /blog/2d-concept-to-3d-sculpt
+    - 'img "From Procreate to Cinema 4D: How Mikhail Arce-Ignacio Bridges the 2D-to-3D Gap with Meshy"'
+    - text: "From Procreate to Cinema 4D: How Mikhail Arce-Ignacio Bridges the 2D-to-3D Gap with Meshy"
+  - link "Bridging Cultural Heritage and STEM by Turning Student Imagination into 3D Prints with Meshy Bridging Cultural Heritage and STEM by Turning Student Imagination into 3D Prints with Meshy":
+    - /url: /blog/ai-bridges-cultural-heritage-and-stem-education
+    - img "Bridging Cultural Heritage and STEM by Turning Student Imagination into 3D Prints with Meshy"
+    - text: Bridging Cultural Heritage and STEM by Turning Student Imagination into 3D Prints with Meshy
+  - 'link "Bringing Heritage to Life: How Tony Renou Transformed Student Art into Interactive 3D Game Assets with Meshy AI Bringing Heritage to Life: How Tony Renou Transformed Student Art into Interactive 3D Game Assets with Meshy AI"':
+    - /url: /blog/student-art-to-unity-3d-game-assets
+    - 'img "Bringing Heritage to Life: How Tony Renou Transformed Student Art into Interactive 3D Game Assets with Meshy AI"'
+    - text: "Bringing Heritage to Life: How Tony Renou Transformed Student Art into Interactive 3D Game Assets with Meshy AI"
+  - 'link "Meshy-Powered Cultural STEAM Innovation: How Teacher Wang Chen-Ting Helps Students Turn Palace Jade Artifacts Into AI-Driven VR Creations Meshy-Powered Cultural STEAM Innovation: How Teacher Wang Chen-Ting Helps Students Turn Palace Jade Artifacts Into AI-Driven VR Creations"':
+    - /url: /blog/cultural-heritage-3d-vr-education
+    - 'img "Meshy-Powered Cultural STEAM Innovation: How Teacher Wang Chen-Ting Helps Students Turn Palace Jade Artifacts Into AI-Driven VR Creations"'
+    - text: "Meshy-Powered Cultural STEAM Innovation: How Teacher Wang Chen-Ting Helps Students Turn Palace Jade Artifacts Into AI-Driven VR Creations"
+  - 'link "Empowering Immersive Learning with AI: Murat ERGÜN and His Students'' VR Science Exploration Journey Empowering Immersive Learning with AI: Murat ERGÜN and His Students'' VR Science Exploration Journey"':
+    - /url: /blog/immersive-learning-with-ai
+    - 'img "Empowering Immersive Learning with AI: Murat ERGÜN and His Students'' VR Science Exploration Journey"'
+    - text: "Empowering Immersive Learning with AI: Murat ERGÜN and His Students' VR Science Exploration Journey"
+  - 'link "From Playdough to Pro-Level Dioramas: How Chad Hunter Uses Meshy to Print His Imagination From Playdough to Pro-Level Dioramas: How Chad Hunter Uses Meshy to Print His Imagination"':
+    - /url: /blog/ai-3d-printing-dioramas-tabletop
+    - 'img "From Playdough to Pro-Level Dioramas: How Chad Hunter Uses Meshy to Print His Imagination"'
+    - text: "From Playdough to Pro-Level Dioramas: How Chad Hunter Uses Meshy to Print His Imagination"
+  - 'link "From Technical Barriers to Creative Explosion: How a VITA School Teacher Transformed 8th-Grade Game Design with Meshy From Technical Barriers to Creative Explosion: How a VITA School Teacher Transformed 8th-Grade Game Design with Meshy"':
+    - /url: /blog/ai-3d-game-asset-creation-for-students
+    - 'img "From Technical Barriers to Creative Explosion: How a VITA School Teacher Transformed 8th-Grade Game Design with Meshy"'
+    - text: "From Technical Barriers to Creative Explosion: How a VITA School Teacher Transformed 8th-Grade Game Design with Meshy"
+  - 'link "From 300 Hours in Blender to 5 Minutes per Model: How Meshy AI Helped cyber_fox Rescue Her English-Learning App''s 3D Creation From 300 Hours in Blender to 5 Minutes per Model: How Meshy AI Helped cyber_fox Rescue Her English-Learning App''s 3D Creation"':
+    - /url: /blog/fast-3d-generation-tool-for-education-app-3d-assets
+    - 'img "From 300 Hours in Blender to 5 Minutes per Model: How Meshy AI Helped cyber_fox Rescue Her English-Learning App''s 3D Creation"'
+    - text: "From 300 Hours in Blender to 5 Minutes per Model: How Meshy AI Helped cyber_fox Rescue Her English-Learning App's 3D Creation"
+  - 'link "From AA Tools Programmer to Solo Dev: How Jlemarchand Builds a Point-and-Click Adventure with Meshy AI From AA Tools Programmer to Solo Dev: How Jlemarchand Builds a Point-and-Click Adventure with Meshy AI"':
+    - /url: /blog/point-and-click-game
+    - 'img "From AA Tools Programmer to Solo Dev: How Jlemarchand Builds a Point-and-Click Adventure with Meshy AI"'
+    - text: "From AA Tools Programmer to Solo Dev: How Jlemarchand Builds a Point-and-Click Adventure with Meshy AI"
+  - 'link "From Flash Games to Horror Worlds: How EvilKris Uses Meshy to Shape Famished From Flash Games to Horror Worlds: How EvilKris Uses Meshy to Shape Famished"':
+    - /url: /blog/3d-horror-game-assets-creation-for-famished
+    - 'img "From Flash Games to Horror Worlds: How EvilKris Uses Meshy to Shape Famished"'
+    - text: "From Flash Games to Horror Worlds: How EvilKris Uses Meshy to Shape Famished"
+  - 'link "From Literature to 3D Emotion: kirinkarwai''s 3D Art Journey with Meshy AI From Literature to 3D Emotion: kirinkarwai''s 3D Art Journey with Meshy AI"':
+    - /url: /blog/3d-art-ai-inspiration
+    - 'img "From Literature to 3D Emotion: kirinkarwai''s 3D Art Journey with Meshy AI"'
+    - text: "From Literature to 3D Emotion: kirinkarwai's 3D Art Journey with Meshy AI"
+  - 'link "Solo Indie Dev Axx''s Journey: How Meshy AI Turned His Surreal 3D Platformer Dream Into Reality Solo Indie Dev Axx''s Journey: How Meshy AI Turned His Surreal 3D Platformer Dream Into Reality"':
+    - /url: /blog/solo-indie-dev-3d-platformer
+    - 'img "Solo Indie Dev Axx''s Journey: How Meshy AI Turned His Surreal 3D Platformer Dream Into Reality"'
+    - text: "Solo Indie Dev Axx's Journey: How Meshy AI Turned His Surreal 3D Platformer Dream Into Reality"
+  - 'link "Meshy-Powered 911 Outreach: Ted Sparks'' Innovation Revitalizes Logan County''s Safety Education for Students & Families Meshy-Powered 911 Outreach: Ted Sparks'' Innovation Revitalizes Logan County''s Safety Education for Students & Families"':
+    - /url: /blog/meshy-911-outreach-program-3d-printing
+    - 'img "Meshy-Powered 911 Outreach: Ted Sparks'' Innovation Revitalizes Logan County''s Safety Education for Students & Families"'
+    - text: "Meshy-Powered 911 Outreach: Ted Sparks' Innovation Revitalizes Logan County's Safety Education for Students & Families"
+  - 'link "From Heritage to Digital: How Meshy Empowers Annie to Weave AI and Intangible Cultural Heritage into 3D Art From Heritage to Digital: How Meshy Empowers Annie to Weave AI and Intangible Cultural Heritage into 3D Art"':
+    - /url: /blog/ai-ich-3d-art-meshy-tool
+    - 'img "From Heritage to Digital: How Meshy Empowers Annie to Weave AI and Intangible Cultural Heritage into 3D Art"'
+    - text: "From Heritage to Digital: How Meshy Empowers Annie to Weave AI and Intangible Cultural Heritage into 3D Art"
+  - link "How CoolPuzzler Uses Meshy to Build a Backrooms 3D Game with Survival and Documentation How CoolPuzzler Uses Meshy to Build a Backrooms 3D Game with Survival and Documentation":
+    - /url: /blog/backrooms-game
+    - img "How CoolPuzzler Uses Meshy to Build a Backrooms 3D Game with Survival and Documentation"
+    - text: How CoolPuzzler Uses Meshy to Build a Backrooms 3D Game with Survival and Documentation
+  - 'link "Meshy Powers Omar''s Cosmicrafts Adventures: How AI Revolutionizes 3D Assets for Infinite Space Games Meshy Powers Omar''s Cosmicrafts Adventures: How AI Revolutionizes 3D Assets for Infinite Space Games"':
+    - /url: /blog/ai-3d-space-game-asset
+    - 'img "Meshy Powers Omar''s Cosmicrafts Adventures: How AI Revolutionizes 3D Assets for Infinite Space Games"'
+    - text: "Meshy Powers Omar's Cosmicrafts Adventures: How AI Revolutionizes 3D Assets for Infinite Space Games"
+  - 'link "Soliloquis Reveals: Breaking Indie Game Character Design Bottlenecks with Meshy Soliloquis Reveals: Breaking Indie Game Character Design Bottlenecks with Meshy"':
+    - /url: /blog/indie-game-character-design-workflow
+    - 'img "Soliloquis Reveals: Breaking Indie Game Character Design Bottlenecks with Meshy"'
+    - text: "Soliloquis Reveals: Breaking Indie Game Character Design Bottlenecks with Meshy"
+  - 'link "Arena Pong: Indie Dev Uses Meshy to Add 3D Twist to a Retro Classic Arena Pong: Indie Dev Uses Meshy to Add 3D Twist to a Retro Classic"':
+    - /url: /blog/ai-tools-for-indie-game-development
+    - 'img "Arena Pong: Indie Dev Uses Meshy to Add 3D Twist to a Retro Classic"'
+    - text: "Arena Pong: Indie Dev Uses Meshy to Add 3D Twist to a Retro Classic"
+  - 'link "From Architecture to Indie Worlds: How Cristóbal Uses Meshy to Build Treasures of the Cajón From Architecture to Indie Worlds: How Cristóbal Uses Meshy to Build Treasures of the Cajón"':
+    - /url: /blog/indie-game-development-process
+    - 'img "From Architecture to Indie Worlds: How Cristóbal Uses Meshy to Build Treasures of the Cajón"'
+    - text: "From Architecture to Indie Worlds: How Cristóbal Uses Meshy to Build Treasures of the Cajón"
+  - 'link "Zaf''s Secret to Cinematic 3D: How Meshy Cuts Modeling Time and Boosts Atmosphere Zaf''s Secret to Cinematic 3D: How Meshy Cuts Modeling Time and Boosts Atmosphere"':
+    - /url: /blog/cinematic-3d
+    - 'img "Zaf''s Secret to Cinematic 3D: How Meshy Cuts Modeling Time and Boosts Atmosphere"'
+    - text: "Zaf's Secret to Cinematic 3D: How Meshy Cuts Modeling Time and Boosts Atmosphere"
+  - 'link "From Concept to Combat: How AI Accelerated One Indie Dev''s Vision for FLOW STATE From Concept to Combat: How AI Accelerated One Indie Dev''s Vision for FLOW STATE"':
+    - /url: /blog/ai-in-game-development
+    - 'img "From Concept to Combat: How AI Accelerated One Indie Dev''s Vision for FLOW STATE"'
+    - text: "From Concept to Combat: How AI Accelerated One Indie Dev's Vision for FLOW STATE"
+  - 'link "Stylized Antiquity 3D Creation: How Aiko Uses Meshy & Prompt Engineering for Style Consistency Stylized Antiquity 3D Creation: How Aiko Uses Meshy & Prompt Engineering for Style Consistency"':
+    - /url: /blog/3D-prompt-engineering
+    - 'img "Stylized Antiquity 3D Creation: How Aiko Uses Meshy & Prompt Engineering for Style Consistency"'
+    - text: "Stylized Antiquity 3D Creation: How Aiko Uses Meshy & Prompt Engineering for Style Consistency"
+  - 'link "From Ideas to Identity: How Meshy Helped Tansy Embrace Her Inner Artist From Ideas to Identity: How Meshy Helped Tansy Embrace Her Inner Artist"':
+    - /url: /blog/ai-generated-3d-art
+    - 'img "From Ideas to Identity: How Meshy Helped Tansy Embrace Her Inner Artist"'
+    - text: "From Ideas to Identity: How Meshy Helped Tansy Embrace Her Inner Artist"
+  - 'link "From Second Life to Real Creative Freedom: How Meshy Transformed Sivan''s Workflow From Second Life to Real Creative Freedom: How Meshy Transformed Sivan''s Workflow"':
+    - /url: /blog/second-life-avatar-creation-with-meshy
+    - 'img "From Second Life to Real Creative Freedom: How Meshy Transformed Sivan''s Workflow"'
+    - text: "From Second Life to Real Creative Freedom: How Meshy Transformed Sivan's Workflow"
+  - 'link "Unlocking Creativity: How Skylyfe Inc. Uses Meshy AI to Empower the Next Generation of Tech Innovators Unlocking Creativity: How Skylyfe Inc. Uses Meshy AI to Empower the Next Generation of Tech Innovators"':
+    - /url: /blog/skylyfe-meshy-3d-printing-program
+    - 'img "Unlocking Creativity: How Skylyfe Inc. Uses Meshy AI to Empower the Next Generation of Tech Innovators"'
+    - text: "Unlocking Creativity: How Skylyfe Inc. Uses Meshy AI to Empower the Next Generation of Tech Innovators"
+  - 'link "From Hours to Minutes: How Marcos Medel Transforms His VFX Workflow with Meshy AI From Hours to Minutes: How Marcos Medel Transforms His VFX Workflow with Meshy AI"':
+    - /url: /blog/vfx-workflow
+    - 'img "From Hours to Minutes: How Marcos Medel Transforms His VFX Workflow with Meshy AI"'
+    - text: "From Hours to Minutes: How Marcos Medel Transforms His VFX Workflow with Meshy AI"
+  - 'link "Into the Depths of Remnants of R''lyeh: Crafting a Lovecraftian Horror Game with AI Into the Depths of Remnants of R''lyeh: Crafting a Lovecraftian Horror Game with AI"':
+    - /url: /blog/indie-horror-game
+    - 'img "Into the Depths of Remnants of R''lyeh: Crafting a Lovecraftian Horror Game with AI"'
+    - text: "Into the Depths of Remnants of R'lyeh: Crafting a Lovecraftian Horror Game with AI"
+  - 'link "Enhancing Virtual Reality Education: Jeremy''s Innovative Use of AI at Stanford Enhancing Virtual Reality Education: Jeremy''s Innovative Use of AI at Stanford"':
+    - /url: /blog/virtual-reality-education
+    - 'img "Enhancing Virtual Reality Education: Jeremy''s Innovative Use of AI at Stanford"'
+    - text: "Enhancing Virtual Reality Education: Jeremy's Innovative Use of AI at Stanford"
+  - 'link "Make Models for 3D Printing with Meshy: A Step-by-Step Guide Make Models for 3D Printing with Meshy: A Step-by-Step Guide"':
+    - /url: /blog/make-models-for-3d-printing
+    - 'img "Make Models for 3D Printing with Meshy: A Step-by-Step Guide"'
+    - text: "Make Models for 3D Printing with Meshy: A Step-by-Step Guide"
+  - 'link "Shimmy''s Journey: Unleashing Creative Potential with Meshy''s AI-Powered 3D Modeling Shimmy''s Journey: Unleashing Creative Potential with Meshy''s AI-Powered 3D Modeling"':
+    - /url: /blog/unleashing-creative-potential-with-meshy-ai-powered-3d-modeling
+    - 'img "Shimmy''s Journey: Unleashing Creative Potential with Meshy''s AI-Powered 3D Modeling"'
+    - text: "Shimmy's Journey: Unleashing Creative Potential with Meshy's AI-Powered 3D Modeling"
+  - img
+  - 'link "Incredible text to 3D and more! No limits to your imagination. If you have a creative mind, you can indulge yourself in creating everything that comes to mind, in a 3D version. The latest update has brought further improvements, furthermore in just 60 seconds 8 results of what we are going to create are generated. Of these, we can request an upscale or rather a refinement of the result. There are 3 3D generation possibilities which are as follows: from text, from image and the fantastic retexture function. I am one of the lucky winners of the retexture contest which gave away color stickers printed with a 3D printer! It is possible to export your creation in video format and in the glb format exportable to 3D editing software. Rating: 5 stars deserved!! Max Casu Max Casu AI Creator"':
+    - /url: https://www.producthunt.com/products/meshy/reviews?review=701252
+    - text: "Incredible text to 3D and more! No limits to your imagination. If you have a creative mind, you can indulge yourself in creating everything that comes to mind, in a 3D version. The latest update has brought further improvements, furthermore in just 60 seconds 8 results of what we are going to create are generated. Of these, we can request an upscale or rather a refinement of the result. There are 3 3D generation possibilities which are as follows: from text, from image and the fantastic retexture function. I am one of the lucky winners of the retexture contest which gave away color stickers printed with a 3D printer! It is possible to export your creation in video format and in the glb format exportable to 3D editing software. Rating: 5 stars deserved!!"
+    - img "Max Casu"
+    - img
+    - text: Max Casu AI Creator
+  - link "The level of texture and ease of the UI are incredible and unmatched. I use way too many 3D tools and this sits at the top of my workflow. Thanks Meshy! Tom Blake Tom Blake Digital Artist":
+    - /url: https://www.producthunt.com/products/meshy/reviews?review=800684
+    - text: The level of texture and ease of the UI are incredible and unmatched. I use way too many 3D tools and this sits at the top of my workflow. Thanks Meshy!
+    - img "Tom Blake"
+    - img
+    - text: Tom Blake Digital Artist
+  - link "My current go-to for AI 3D model generation tool. The latest Meshy 4 generations have been a huge leap in terms of quality for both text and image to 3D. Plus I've already got lots of value out of the easy biped/quadruped rigging and walking animation option. Also, it's great to see the texturing improvements and the ability to retexture or fix textured sections (via the text-to-3d approach). Jon Draper Jon Draper AI Animator & Developer":
+    - /url: https://www.producthunt.com/products/meshy/reviews?review=801638
+    - text: My current go-to for AI 3D model generation tool. The latest Meshy 4 generations have been a huge leap in terms of quality for both text and image to 3D. Plus I've already got lots of value out of the easy biped/quadruped rigging and walking animation option. Also, it's great to see the texturing improvements and the ability to retexture or fix textured sections (via the text-to-3d approach).
+    - img "Jon Draper"
+    - img
+    - text: Jon Draper AI Animator & Developer
+  - 'link "Who would have said that at some point we could use #AI to #texture our #3D models? @MeshyAI can really texture anything. From models you import to anything you create in other tools (without any UV mapping needed 🤯). Gabriele Romagnoli Gabriele Romagnoli 3D Artist"':
+    - /url: https://twitter.com/GabRoXR/status/1701128300775591966
+    - text: "Who would have said that at some point we could use #AI to #texture our #3D models? @MeshyAI can really texture anything. From models you import to anything you create in other tools (without any UV mapping needed 🤯)."
+    - img "Gabriele Romagnoli"
+    - img
+    - text: Gabriele Romagnoli 3D Artist
+  - 'link "With @MeshyAI you can generate your textures in ai, but what makes this a winner is it''s amazing easy-to-use Interface, and the GLB maps you can use with #b3d #blender - #3D #artists, check this tool to texture your #models! (not sponsored). Pierre Schiller Pierre Schiller 3D Artist"':
+    - /url: https://twitter.com/3D_director/status/1702032409535902144
+    - text: "With @MeshyAI you can generate your textures in ai, but what makes this a winner is it's amazing easy-to-use Interface, and the GLB maps you can use with #b3d #blender - #3D #artists, check this tool to texture your #models! (not sponsored)."
+    - img "Pierre Schiller"
+    - img
+    - text: Pierre Schiller 3D Artist
+  - link "It's really blowing my mind how far we've come with text-to-3D. It was only a few months ago we were getting very unimpressive results from tools like Shap-E. Now I can make full on objects that are borderline game ready. Matt Wolfe Matt Wolfe AI Creator":
+    - /url: https://x.com/mreflow/status/1752774309721125135
+    - text: It's really blowing my mind how far we've come with text-to-3D. It was only a few months ago we were getting very unimpressive results from tools like Shap-E. Now I can make full on objects that are borderline game ready.
+    - img "Matt Wolfe"
+    - img
+    - text: Matt Wolfe AI Creator
+  - link "2025 is the year 3D AI takes over! Meshy AI lets you turn a single image into high-quality 3D model. Then, you can choose any angle and bring it to life with an AI video generator. 3D AI is the future of content creation. el.cine el.cine AI Creator":
+    - /url: https://x.com/EHuanglu/status/1863255072035279336
+    - text: 2025 is the year 3D AI takes over! Meshy AI lets you turn a single image into high-quality 3D model. Then, you can choose any angle and bring it to life with an AI video generator. 3D AI is the future of content creation.
+    - img "el.cine"
+    - img
+    - text: el.cine AI Creator
+  - link "I absolutely love this deep-sea steel city that blends surrealism and steampunk styles. It’s incredibly exciting to see a world from my imagination gradually take shape in the game! @MeshyAI DarkTree Game Studio DarkTree Game Studio Game Developer":
+    - /url: https://x.com/davidzhang03211/status/1861106560782737570
+    - text: I absolutely love this deep-sea steel city that blends surrealism and steampunk styles. It’s incredibly exciting to see a world from my imagination gradually take shape in the game! @MeshyAI
+    - img "DarkTree Game Studio"
+    - img
+    - text: DarkTree Game Studio Game Developer
+  - link "Meshy.ai is getting so much better. Last time I tried it, I was happy to get a blob in roughly the right shape. Now it seems capable of producing some really intricate forms while adhering to the prompt quite well. Kiaran Ritchie Kiaran Ritchie Principle Developer at Unreal Engine":
+    - /url: https://x.com/kiaran_ritchie/status/1857584831321776407
+    - text: Meshy.ai is getting so much better. Last time I tried it, I was happy to get a blob in roughly the right shape. Now it seems capable of producing some really intricate forms while adhering to the prompt quite well.
+    - img "Kiaran Ritchie"
+    - img
+    - text: Kiaran Ritchie Principle Developer at Unreal Engine
+  - img
+  - heading "Loved By Creators" [level=2]:
+    - img
+    - text: Loved By Creators
+  - button:
+    - img
+  - button:
+    - img
+  - heading "3D, On Command" [level=2]
+  - button "Start Creating"
+  - link "Contact sales":
+    - /url: /contact
+    - text: Contact Sales
+- contentinfo:
+  - link:
+    - /url: /
+    - img
+  - link:
+    - /url: /careers
+    - img
+  - list:
+    - listitem:
+      - link "Pricing":
+        - /url: /pricing
+    - listitem:
+      - link "Community":
+        - /url: /discover
+    - listitem:
+      - link "About":
+        - /url: /about#about
+    - listitem:
+      - link "Careers":
+        - /url: /careers
+    - listitem:
+      - link "Contact":
+        - /url: /about#contact
+    - listitem:
+      - link "Media Kit":
+        - /url: /media-kit
+    - listitem:
+      - link "Status":
+        - /url: https://status.meshy.ai/
+  - img "ISO 27001:2022"
+  - img "SOC2"
+  - img "GDPRMark"
+  - link "4.8/5":
+    - /url: https://www.g2.com/products/meshy/reviews
+    - img
+    - img
+    - text: 4.8/5
+  - link "4.8/5":
+    - /url: https://www.trustpilot.com/review/meshy.ai
+    - img
+    - img
+    - text: 4.8/5
+  - link "X":
+    - /url: https://twitter.com/MeshyAI
+    - text: X
+    - img
+  - link "Instagram":
+    - /url: https://www.instagram.com/meshy.ai/
+    - text: Instagram
+    - img
+  - link "YouTube":
+    - /url: https://www.youtube.com/@MeshyAI
+    - text: YouTube
+    - img
+  - link "Discord":
+    - /url: https://discord.com/invite/KgD5yVM9Y4
+    - text: Discord
+    - img
+  - link "TikTok":
+    - /url: https://www.tiktok.com/@meshy.ai
+    - text: TikTok
+    - img
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/company/meshyai/
+    - text: LinkedIn
+    - img
+  - heading "Ask AI about Meshy" [level=3]
+  - link "Ask ChatGPT about Meshy":
+    - /url: https://chatgpt.com/?prompt=I'm%20researching%20AI%203D%20model%20generator%20and%20want%20to%20know%20how%20Meshy%20helps%20creators%20to%20get%20high%20quality%203D%20models.%20Summarize%20the%20highlights%20from%20Meshy's%20website%20(https%3A%2F%2Fwww.meshy.ai)%20and%20community%20reviews.
+    - button:
+      - img
+  - link "Ask Perplexity about Meshy":
+    - /url: https://www.perplexity.ai/search/new?q=I'm%20researching%20AI%203D%20model%20generator%20and%20want%20to%20know%20how%20Meshy%20helps%20creators%20to%20get%20high%20quality%203D%20models.%20Summarize%20the%20highlights%20from%20Meshy's%20website%20(https%3A%2F%2Fwww.meshy.ai)%20and%20community%20reviews.
+    - button:
+      - img
+  - link "Ask Claude about Meshy":
+    - /url: https://claude.ai/new?q=I'm%20researching%20AI%203D%20model%20generator%20and%20want%20to%20know%20how%20Meshy%20helps%20creators%20to%20get%20high%20quality%203D%20models.%20Summarize%20the%20highlights%20from%20Meshy's%20website%20(https%3A%2F%2Fwww.meshy.ai)%20and%20community%20reviews.
+    - button:
+      - img
+  - link "Ask Gemini about Meshy":
+    - /url: https://www.google.com/search?udm=50&aep=11&q=I'm%20researching%20AI%203D%20model%20generator%20and%20want%20to%20know%20how%20Meshy%20helps%20creators%20to%20get%20high%20quality%203D%20models.%20Summarize%20the%20highlights%20from%20Meshy's%20website%20(https%3A%2F%2Fwww.meshy.ai)%20and%20community%20reviews.
+    - button:
+      - img
+  - link "Ask Grok about Meshy":
+    - /url: https://x.com/i/grok?text=I'm%20researching%20AI%203D%20model%20generator%20and%20want%20to%20know%20how%20Meshy%20helps%20creators%20to%20get%20high%20quality%203D%20models.%20Summarize%20the%20highlights%20from%20Meshy's%20website%20(https%3A%2F%2Fwww.meshy.ai)%20and%20community%20reviews.
+    - button:
+      - img
+  - text: Features
+  - list:
+    - listitem:
+      - link "Text to 3D Model":
+        - /url: /features/text-to-3d
+    - listitem:
+      - link "Image to 3D Model":
+        - /url: /features/image-to-3d
+    - listitem:
+      - link "AI Texturing":
+        - /url: /features/ai-texture-generator
+    - listitem:
+      - link "Animation":
+        - /url: /features/ai-animation-generator
+    - listitem:
+      - link "API":
+        - /url: /api
+  - text: Learn
+  - list:
+    - listitem:
+      - link "Blog":
+        - /url: /blog
+    - listitem:
+      - link "Tutorials":
+        - /url: /tutorials
+    - listitem:
+      - link "Customer Stories":
+        - /url: /customers
+    - listitem:
+      - link "Documentation":
+        - /url: https://docs.meshy.ai/en
+    - listitem:
+      - link "Help Center":
+        - /url: https://help.meshy.ai/en/
+  - text: Tools
+  - list:
+    - listitem:
+      - link "3D File Converter":
+        - /url: /3d-tools/file-converter
+    - listitem:
+      - link "Online 3D Viewer":
+        - /url: /3d-tools/online-viewer
+    - listitem:
+      - link "3D Text Generator":
+        - /url: /3d-tools/3d-text-generator
+  - text: Plugins
+  - list:
+    - listitem:
+      - link "Bambu Studio":
+        - /url: /integrations/bambu-studio
+    - listitem:
+      - link "Blender":
+        - /url: /integrations/blender
+    - listitem:
+      - link "Creality Print":
+        - /url: /integrations/creality-print
+    - listitem:
+      - link "OrcaSlicer":
+        - /url: /integrations/orcaslicer
+    - listitem:
+      - link "Unity":
+        - /url: /integrations/unity
+    - listitem:
+      - link "Ultimaker Cura":
+        - /url: /integrations/cura
+    - listitem:
+      - link "Elegoo Slicer":
+        - /url: /integrations/elegoo-slicer
+    - listitem:
+      - link "Unreal Engine":
+        - /url: /integrations/unreal-engine
+    - listitem:
+      - link "Roblox Studio":
+        - /url: /integrations/roblox
+    - listitem:
+      - link "3ds Max":
+        - /url: /integrations/3ds-max
+    - listitem:
+      - link "Lychee Slicer":
+        - /url: /integrations/lychee-slicer
+    - listitem:
+      - link "Maya":
+        - /url: /integrations/maya
+    - listitem:
+      - link "Godot":
+        - /url: /integrations/godot
+    - listitem:
+      - link "All Integrations":
+        - /url: /integrations
+  - text: Programs
+  - list:
+    - listitem:
+      - link "Affiliate Program":
+        - /url: /affiliates
+    - listitem:
+      - link "Creator Program":
+        - /url: /creators
+    - listitem:
+      - link "Fellowship Program":
+        - /url: /fellowship
+    - listitem:
+      - link "Referral Program":
+        - /url: /referral
+    - listitem:
+      - link "Education Program":
+        - /url: /education
+  - text: Use Cases
+  - list:
+    - listitem:
+      - link "Free 3D Models":
+        - /url: /use-cases/free-3d-models
+    - listitem:
+      - link "3D Printing":
+        - /url: /use-cases/3d-printer-files
+    - listitem:
+      - link "Game Development":
+        - /url: /use-cases/free-game-assets
+    - listitem:
+      - link "3D Animation":
+        - /url: /use-cases/3d-animation
+    - listitem:
+      - link "Education":
+        - /url: /use-cases/education
+    - listitem:
+      - link "Product Design":
+        - /url: /use-cases/product-design
+    - listitem:
+      - link "Film Production":
+        - /url: /use-cases/film-production
+    - listitem:
+      - link "VR/AR":
+        - /url: /use-cases/vr-ar
+    - listitem:
+      - link "Toy Design":
+        - /url: /use-cases/toy-design
+    - listitem:
+      - link "E-commerce":
+        - /url: /use-cases/e-commerce
+    - listitem:
+      - link "Interior Design":
+        - /url: /use-cases/interior-design
+    - listitem:
+      - link "VFX":
+        - /url: /use-cases/vfx
+  - text: © 2026 MESHY LLC. ALL RIGHTS RESERVED
+  - link "Terms Of Use":
+    - /url: /terms-of-use
+  - link "Privacy Policy":
+    - /url: /privacy-policy
+  - link "Acceptable Use Policy":
+    - /url: /acceptable-use-policy
+  - link "Cookie Policy":
+    - /url: /cookie-policy
+  - link "Trust Center":
+    - /url: https://app.drata.com/trust/07cad912-84f9-4f9e-ad58-6975d62ad32f
+  - button "English":
+    - text: English
+    - img
+- alert
+- iframe
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const ProductPage = require('../../pages/product.page');
+  4  | 
+  5  | test('Add Product To Cart', async ({ page }) => {
+  6  | 
+  7  |     const productPage = new ProductPage(page);
+  8  | 
+  9  |     await productPage.goto();
+  10 | 
+  11 |     await productPage.openProductsPage();
+  12 | 
+  13 |     await productPage.addFirstProductToCart();
+  14 | 
+  15 |     await productPage.continueShopping();
+  16 | 
+  17 |     await productPage.openCart();
+  18 | 
+  19 |     await expect(
+  20 |         productPage.cartProduct
+> 21 |     ).toBeVisible();
+     |       ^ Error: expect(locator).toBeVisible() failed
+  22 | 
+  23 | });
+```

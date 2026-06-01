@@ -1,0 +1,242 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: cart\cart.spec.js >> Add Product To Cart
+- Location: tests\cart\cart.spec.js:5:1
+
+# Error details
+
+```
+TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('.features_items .product-image-wrapper').first().locator('.add-to-cart').first()
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - heading "Web server is returning an unknown error Error code 520" [level=1] [ref=e5]:
+      - generic [ref=e6]: Web server is returning an unknown error
+      - text: Error code 520
+    - generic [ref=e7]:
+      - text: Visit
+      - link "cloudflare.com" [ref=e8]:
+        - /url: https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=automationexercise.com
+      - text: for more information.
+    - generic [ref=e9]: 2026-05-29 16:54:51 UTC
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - text: You
+      - heading "Browser" [level=3] [ref=e17]
+      - text: Working
+    - generic [ref=e18]:
+      - link [ref=e20]:
+        - /url: https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=automationexercise.com
+      - text: Singapore
+      - heading "Cloudflare" [level=3] [ref=e23]:
+        - link "Cloudflare" [ref=e24]:
+          - /url: https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=automationexercise.com
+      - text: Working
+    - generic [ref=e25]:
+      - text: automationexercise.com
+      - heading "Host" [level=3] [ref=e29]
+      - text: Error
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - heading "What happened?" [level=2] [ref=e33]
+      - paragraph [ref=e34]: There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.
+    - generic [ref=e35]:
+      - heading "What can I do?" [level=2] [ref=e36]
+      - heading "If you are a visitor of this website:" [level=3] [ref=e37]
+      - paragraph [ref=e38]: Please try again in a few minutes.
+      - heading "If you are the owner of this website:" [level=3] [ref=e39]
+      - paragraph [ref=e40]:
+        - text: There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team. Please include the Ray ID (which is at the bottom of this error page).
+        - link "Additional troubleshooting resources" [ref=e41]:
+          - /url: https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/
+        - text: .
+  - paragraph [ref=e43]:
+    - generic [ref=e44]:
+      - text: "Cloudflare Ray ID:"
+      - strong [ref=e45]: a03705f838e881a7
+    - text: •
+    - generic [ref=e46]:
+      - text: "Your IP:"
+      - button "Click to reveal" [ref=e47] [cursor=pointer]
+      - text: •
+    - generic [ref=e48]:
+      - text: Performance & security by
+      - link "Cloudflare" [ref=e49]:
+        - /url: https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=automationexercise.com
+```
+
+# Test source
+
+```ts
+  63  |         this.viewProductBtn = page.locator(
+  64  |             'a[href*="/product_details/"]'
+  65  |         ).first();
+  66  | 
+  67  |         // Search
+  68  |         this.searchInput = page.locator(
+  69  |             '#search_product'
+  70  |         );
+  71  | 
+  72  |         this.searchBtn = page.locator(
+  73  |             '#submit_search'
+  74  |         );
+  75  | 
+  76  |         this.productTitles = page.locator(
+  77  |             '.productinfo p'
+  78  |         );
+  79  | 
+  80  |         // Product Details
+  81  |         this.productDetailName = page.locator(
+  82  |             '.product-information h2'
+  83  |         );
+  84  | 
+  85  |         // Cart
+  86  |         this.addToCartBtn = page.locator(
+  87  |     '.features_items .product-image-wrapper'
+  88  | ).first().locator('.add-to-cart').first();
+  89  |         this.secondAddToCartBtn = page.locator(
+  90  |             '.features_items .product-image-wrapper'
+  91  |         ).nth(1).locator('.add-to-cart').first();
+  92  | 
+  93  |         this.continueShoppingBtn = page.getByRole(
+  94  |             'button',
+  95  |             { name: 'Continue Shopping' }
+  96  |         );
+  97  | 
+  98  |         this.cartBtn = page.locator(
+  99  |             'a[href="/view_cart"]'
+  100 |         ).first();
+  101 | 
+  102 |         this.cartProduct = page.locator(
+  103 |             '.cart_description h4 a'
+  104 |         );
+  105 | 
+  106 |         this.removeCartBtn = page.locator(
+  107 |             '.cart_quantity_delete'
+  108 |         );
+  109 | 
+  110 |         this.cartQuantity = page.locator(
+  111 |             '.cart_quantity'
+  112 |         );
+  113 |     }
+  114 | 
+  115 |     async goto() {
+  116 | 
+  117 |         await this.page.goto(
+  118 |             'https://automationexercise.com/',
+  119 |             {
+  120 |                 waitUntil: 'domcontentloaded',
+  121 |                 timeout: 60000
+  122 |             }
+  123 |         );
+  124 |     }
+  125 | 
+  126 |     async openProductsPage() {
+  127 | 
+  128 |         await this.productsBtn.waitFor({
+  129 |             state: 'visible'
+  130 |         });
+  131 | 
+  132 |         await this.productsBtn.click({
+  133 |             force: true
+  134 |         });
+  135 |     }
+  136 | 
+  137 |     async searchProduct(productName) {
+  138 | 
+  139 |         await this.searchInput.waitFor({
+  140 |             state: 'visible',
+  141 |             timeout: 10000
+  142 |         });
+  143 | 
+  144 |         await this.searchInput.fill(productName);
+  145 | 
+  146 |         await this.searchBtn.click({
+  147 |             force: true
+  148 |         });
+  149 |     }
+  150 | 
+  151 |     async openFirstProduct() {
+  152 | 
+  153 |         await this.page.goto(
+  154 |             'https://automationexercise.com/product_details/1',
+  155 |             {
+  156 |                 waitUntil: 'domcontentloaded',
+  157 |                 timeout: 60000
+  158 |             }
+  159 |         );
+  160 |     }
+  161 |     async addFirstProductToCart() {
+  162 | 
+> 163 |     await this.addToCartBtn.scrollIntoViewIfNeeded();
+      |                             ^ TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+  164 | 
+  165 |     await this.addToCartBtn.click({
+  166 |         force: true
+  167 |     });
+  168 | 
+  169 |     await this.page.waitForTimeout(2000);
+  170 | }
+  171 |     async addSecondProductToCart() {
+  172 | 
+  173 |         await this.secondAddToCartBtn.scrollIntoViewIfNeeded();
+  174 | 
+  175 |         await this.secondAddToCartBtn.click();
+  176 |     }
+  177 | 
+  178 |    async continueShopping() {
+  179 | 
+  180 |     await this.continueShoppingBtn.waitFor({
+  181 |         state: 'visible',
+  182 |         timeout: 15000
+  183 |     });
+  184 | 
+  185 |     await this.continueShoppingBtn.click({
+  186 |         force: true
+  187 |     });
+  188 | 
+  189 |     await this.page.waitForTimeout(1000);
+  190 | }
+  191 | 
+  192 |  async openCart() {
+  193 | 
+  194 |     await this.cartBtn.waitFor({
+  195 |         state: 'visible'
+  196 |     });
+  197 | 
+  198 |     await this.cartBtn.click({
+  199 |         force: true
+  200 |     });
+  201 | 
+  202 |     await this.page.waitForLoadState(
+  203 |         'domcontentloaded'
+  204 |     );
+  205 | 
+  206 |     await this.page.waitForTimeout(
+  207 |         2000
+  208 |     );
+  209 | }
+  210 |     async removeProductFromCart() {
+  211 | 
+  212 |         await this.removeCartBtn.click({
+  213 |             force: true
+  214 |         });
+  215 |     }
+  216 | 
+  217 | }
+  218 | 
+  219 | module.exports = ProductPage;
+```
