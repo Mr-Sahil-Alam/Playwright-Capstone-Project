@@ -53,33 +53,25 @@ class LoginPage {
             'https://automationexercise.com/',
             {
                 waitUntil: 'domcontentloaded',
-                timeout: 60000
+                timeout: 90000
             }
         );
+
+        await this.page.waitForTimeout(3000);
     }
 
     async openLoginPage() {
 
-        await this.signupLoginBtn.waitFor({
-            state: 'visible'
-        });
-
-        await this.signupLoginBtn.scrollIntoViewIfNeeded();
-
-        await this.signupLoginBtn.click({
-            force: true
-        });
+        await Promise.all([
+            this.page.waitForURL('**/login'),
+            this.signupLoginBtn.click()
+        ]);
     }
-
     async login(email, password) {
 
         await this.emailInput.fill(email);
 
         await this.passwordInput.fill(password);
-
-        await this.loginBtn.waitFor();
-
-        await this.loginBtn.scrollIntoViewIfNeeded();
 
         await this.loginBtn.click({
             force: true

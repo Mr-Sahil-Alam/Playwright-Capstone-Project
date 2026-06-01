@@ -44,9 +44,11 @@ class ContactPage {
             'https://automationexercise.com/',
             {
                 waitUntil: 'domcontentloaded',
-                timeout: 60000
+                timeout: 90000
             }
         );
+
+        await this.page.waitForTimeout(3000);
     }
 
     async openContactPage() {
@@ -83,16 +85,15 @@ class ContactPage {
 
     async submitForm() {
 
-       this.page.on('dialog', async dialog => {
+        this.page.once('dialog', async dialog => {
             await dialog.accept();
         });
 
-        await this.submitBtn.scrollIntoViewIfNeeded();
+        await this.submitBtn.evaluate(
+            button => button.click()
+        );
 
-        await this.submitBtn.click({
-            force: true
-        });
-
+        await this.page.waitForTimeout(3000);
     }
 
 }

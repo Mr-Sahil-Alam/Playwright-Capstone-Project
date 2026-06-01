@@ -11,8 +11,8 @@ test('Login And Save Auth State', async ({ page }) => {
     await loginPage.openLoginPage();
 
     await loginPage.login(
-        'validuser@gmail.com',
-        'validpassword'
+        'sahil.alamcse1@gmail.com',
+        'Alam@2002'
     );
 
     await page.context().storageState({

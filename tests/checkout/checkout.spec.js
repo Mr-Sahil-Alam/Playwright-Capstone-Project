@@ -14,6 +14,22 @@ test('Proceed To Checkout', async ({ page }) => {
 
     await productPage.openCart();
 
+    console.log(
+        'Current URL:',
+        await page.url()
+    );
+
+    await expect(
+        page
+    ).toHaveURL(
+        /view_cart/
+    );
+
+    await page.screenshot({
+        path: 'checkout-debug.png',
+        fullPage: true
+    });
+
     await expect(
         productPage.proceedToCheckoutBtn
     ).toBeVisible();

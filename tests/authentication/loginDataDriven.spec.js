@@ -4,8 +4,8 @@ const LoginPage = require('../../pages/login.page');
 
 const loginData = [
     {
-        email: 'validuser@gmail.com',
-        password: 'validpassword',
+        email: 'sahil.alamcse1@gmail.com',
+        password: 'Alam@2002',
         expected: 'Logout'
     },
     {

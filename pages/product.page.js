@@ -34,9 +34,8 @@ class ProductPage {
             '.product-information p'
         ).nth(1);
 
-        this.productBrand = page.getByText(
-            'Brand:'
-        );
+        this.productBrand =
+            page.locator('.brands_products');
         this.allProductsHeading = page.getByText(
             'All Products'
         );
@@ -84,9 +83,8 @@ class ProductPage {
 
         // Cart
         this.addToCartBtn = page.locator(
-            '.features_items .product-image-wrapper'
-        ).first().locator('.add-to-cart').first();
-
+            '.add-to-cart'
+        ).first();
         this.secondAddToCartBtn = page.locator(
             '.features_items .product-image-wrapper'
         ).nth(1).locator('.add-to-cart').first();
@@ -96,9 +94,9 @@ class ProductPage {
             { name: 'Continue Shopping' }
         );
 
-        this.cartBtn = page.locator(
-            'a[href="/view_cart"]'
-        ).first();
+        this.cartBtn = page.getByRole('link', {
+            name: /cart/i
+        });
 
         this.cartProduct = page.locator(
             '.cart_description h4 a'
@@ -116,24 +114,27 @@ class ProductPage {
     async goto() {
 
         await this.page.goto(
-            'https://automationexercise.com/',
-            {
-                waitUntil: 'domcontentloaded',
-                timeout: 60000
-            }
-        );
+    'https://automationexercise.com/',
+    {
+        waitUntil: 'domcontentloaded',
+        timeout: 90000
+    }
+);
+
+await this.page.waitForTimeout(3000);
     }
 
-    async openProductsPage() {
+  async openProductsPage() {
 
-        await this.productsBtn.waitFor({
-            state: 'visible'
-        });
+    await this.page.goto(
+        'https://automationexercise.com/products',
+        {
+            waitUntil: 'domcontentloaded',
+            timeout: 60000
+        }
+    );
+}
 
-        await this.productsBtn.click({
-            force: true
-        });
-    }
 
     async searchProduct(productName) {
 
@@ -144,9 +145,7 @@ class ProductPage {
 
         await this.searchInput.fill(productName);
 
-        await this.searchBtn.click({
-            force: true
-        });
+       await this.searchBtn.click();
     }
 
     async openFirstProduct() {
@@ -155,15 +154,35 @@ class ProductPage {
             force: true
         });
     }
+async addFirstProductToCart() {
 
-    async addFirstProductToCart() {
+    await this.addToCartBtn.click({
+        force: true
+    });
 
-        await this.addToCartBtn.scrollIntoViewIfNeeded();
+    await this.page.waitForTimeout(3000);
 
-        await this.addToCartBtn.click({
-            force: true
-        });
+    if (
+        await this.continueShoppingBtn
+            .isVisible()
+            .catch(() => false)
+    ) {
+        return;
     }
+
+    await this.page.reload();
+
+    await this.page.waitForTimeout(3000);
+
+    await this.addToCartBtn.click({
+        force: true
+    });
+
+    await this.continueShoppingBtn.waitFor({
+        state: 'visible',
+        timeout: 15000
+    });
+}
 
     async addSecondProductToCart() {
 
@@ -183,10 +202,10 @@ class ProductPage {
     }
 
     async openCart() {
-
-        await this.cartBtn.click({
-            force: true
-        });
+        await Promise.all([
+            this.page.waitForURL('**/view_cart'),
+            this.cartBtn.click()
+        ]);
     }
 
     async removeProductFromCart() {

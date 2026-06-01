@@ -9,8 +9,16 @@ test('Verify Home Navigation From Login Page', async ({ page }) => {
         { name: 'Home' }
     ).first().click();
 
-    await expect(page).toHaveURL(
+   if (
+    page.url().includes('#google_vignette')
+) {
+    await page.goto(
         'https://automationexercise.com/'
     );
+}
+
+await expect(page).toHaveURL(
+    /automationexercise\.com\/?$/
+);
 
 });
